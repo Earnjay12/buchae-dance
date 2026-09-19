@@ -1,746 +1,140 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>아름다운 나라 부채춤 대형</title>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>아름다운 나라 부채춤 19명</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
-<style>
-:root{
-  --bg:#F7F4EC; --panel:#FFFDF8; --ink:#22303A; --muted:#6F7B86; --line:#E3DCCB;
-  --blue:#2F7FC1; --blue-soft:#DCEBF7; --pink:#E2467E; --pink-soft:#FBE3EE; --gold:#E0B13A; --green:#7BA54A;
-  --stage-bg:#FBF9F4; --floor:#E9DFCB; --floor-line:#C9B893; --back:#D9E7F2; --girl:#F06AA5; --boy:#3F8AD1; --fan:#E2467E; --hi:#F5C542; --onmark:#FFFFFF;
-  --shadow:0 1px 2px rgba(34,48,58,.06), 0 8px 24px -12px rgba(34,48,58,.18);
-}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#141A21; --panel:#1C242D; --ink:#EAF0F5; --muted:#9AA7B3; --line:#2C3743;
-  --blue:#7FB6E8; --blue-soft:#20344A; --pink:#F27CAC; --pink-soft:#3A2230; --gold:#E7C25A; --green:#9CC46E;
-  --stage-bg:#1A222B; --floor:#2A3340; --floor-line:#3E4B5A; --back:#233242; --girl:#E8609B; --boy:#4D95D6; --fan:#F27CAC; --hi:#E7C25A; --onmark:#FFFFFF;
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-}}
-:root[data-theme="dark"]{
-  --bg:#141A21; --panel:#1C242D; --ink:#EAF0F5; --muted:#9AA7B3; --line:#2C3743;
-  --blue:#7FB6E8; --blue-soft:#20344A; --pink:#F27CAC; --pink-soft:#3A2230; --gold:#E7C25A; --green:#9CC46E;
-  --stage-bg:#1A222B; --floor:#2A3340; --floor-line:#3E4B5A; --back:#233242; --girl:#E8609B; --boy:#4D95D6; --fan:#F27CAC; --hi:#E7C25A; --onmark:#FFFFFF;
-  --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;padding-inline:16px;padding-block:0 40px;margin:0}
-.wrap{max-width:1180px;margin:0 auto}
-header.top{padding-block:28px 18px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between}
-h1{font-family:'Gowun Batang',serif;font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.2;margin:0;text-wrap:balance}
-.sub{color:var(--muted);margin:6px 0 0;font-size:14px}
-.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13px;background:var(--panel)}
-.pill i{width:10px;height:10px;border-radius:50%;display:inline-block}
-.pill i.b{border-radius:3px;background:var(--boy)} .pill i.g{background:var(--girl)}
-.tabs{display:flex;gap:4px;margin-top:18px;border-bottom:1px solid var(--line)}
-.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px;font:inherit;font-weight:500;color:var(--muted);cursor:pointer}
-.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--pink)}
-.tabs button:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
-.layout{display:grid;grid-template-columns:270px 1fr;gap:20px;margin-top:20px}
-@media (max-width:860px){.layout{grid-template-columns:1fr}}
-.list{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px;max-height:78vh;overflow:auto;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
-@media (max-width:860px){.list{position:static;max-height:230px}}
-.list button{display:grid;grid-template-columns:52px 1fr;gap:8px;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:8px 10px;font:inherit;color:var(--ink);cursor:pointer;align-items:baseline}
-.list button:hover{background:var(--blue-soft)}
-.list button[aria-current="true"]{background:var(--pink-soft);font-weight:700}
-.list button:focus-visible{outline:2px solid var(--blue)}
-.list .t{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
-.list button[aria-current="true"] .t{color:var(--pink)}
-.main{min-width:0}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px}
-.sechead{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
-.sechead h2{font-family:'Gowun Batang',serif;font-size:clamp(20px,2.6vw,26px);margin:0;line-height:1.3;text-wrap:balance}
-.time{font-variant-numeric:tabular-nums;font-weight:700;color:var(--pink);font-size:15px}
-.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
-.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer}
-.btn:hover{border-color:var(--blue);color:var(--blue)}
-.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.primary:hover{filter:brightness(1.05);color:#fff}
-.btn:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.btn:disabled{opacity:.4;cursor:default}
-.timeline{margin-top:14px;display:flex;height:14px;border-radius:7px;overflow:hidden;border:1px solid var(--line)}
-.timeline span{display:block;height:100%;background:var(--blue-soft);border-right:1px solid var(--panel);cursor:pointer}
-.timeline span.on{background:var(--pink)}
-.timeline span:hover{filter:brightness(.92)}
-.stage{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
-.stage svg{display:block}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:13px;color:var(--muted)}
-.legend b{color:var(--ink);font-weight:500}
-.legend svg{vertical-align:-4px;margin-right:2px}
-.summary{margin-top:16px;font-size:15.5px;line-height:1.75;max-width:70ch}
-.cues{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.cue{background:var(--blue-soft);color:var(--ink);border-radius:6px;padding:3px 9px;font-size:13px;font-variant-numeric:tabular-nums}
-.conf{margin-top:10px;font-size:13px;color:var(--muted)}
-.conf b{color:var(--ink);font-weight:500}
-select{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:14px}
-th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{font-weight:700;color:var(--muted);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
-td.n{font-weight:700;white-space:nowrap}
-td.n .dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--girl);vertical-align:-1px;margin-right:6px}
-td.n .dot.b{border-radius:3px;background:var(--boy)}
-.tablewrap{overflow-x:auto}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
-@media (max-width:700px){.two{grid-template-columns:1fr}}
-.roster h3,.guide h3{font-family:'Gowun Batang',serif;font-size:20px;margin:0 0 6px}
-.roster p,.guide p{margin:6px 0;max-width:70ch}
-.trace{margin-top:14px}
-.trace ol{margin:8px 0 0;padding-left:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px}
-.trace li{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13.5px;cursor:pointer;background:var(--panel)}
-.trace li:hover{border-color:var(--blue)}
-.trace li .t{color:var(--pink);font-weight:700;font-variant-numeric:tabular-nums;margin-right:6px}
-.trace li .p{color:var(--muted)}
-.note{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.6}
-.guide ol{padding-left:20px;margin:6px 0}
-.guide li{margin:4px 0}
-[hidden]{display:none!important}
-@media (prefers-reduced-motion:no-preference){.list button,.btn,.timeline span{transition:background .15s,border-color .15s,color .15s}}
-</style>
-
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 <div class="wrap">
   <header class="top">
     <div>
-      <h1>아름다운 나라 부채춤 대형</h1>
-      <p class="sub">거학초 6학년 학예회 영상(5:48) 분석 · 구간별 대형·동작 · 번호는 <b>시작 위치</b> 기준으로 부여</p>
+      <h1>아름다운 나라 부채춤 · 19명 대형</h1>
+      <p class="sub">학예회용 재구성 · <span class="pill"><i class="g"></i>여 10명 (원 1~10)</span> <span class="pill"><i class="b"></i>남 9명 (네모 11~19)</span></p>
     </div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <span class="pill"><i class="g"></i>여자 13명 (원)</span>
-      <span class="pill"><i class="b"></i>남자 8명 (네모)</span>
-      <a class="btn" id="ytlink" href="#" target="_blank" rel="noopener">▶ 유튜브에서 이 구간 보기</a>
-    </div>
+    <details class="settings" id="settings">
+      <summary>⚙ 무대 · 방향 설정</summary>
+      <div class="set-body">
+        <label>무대 가로 <input type="number" id="stW" min="5" max="20" step="0.5"> m</label>
+        <label>무대 세로 <input type="number" id="stD" min="3" max="12" step="0.5"> m</label>
+        <label>보폭(한 걸음) <input type="number" id="stStep" min="0.3" max="0.8" step="0.05"> m</label>
+        <fieldset><legend>왼쪽·오른쪽 기준</legend>
+          <label><input type="radio" name="view" value="student"> 학생 기준 (무대에서 객석을 볼 때)</label>
+          <label><input type="radio" name="view" value="audience"> 객석 기준 (보는 사람 쪽에서)</label>
+        </fieldset>
+        <p class="note">걸음 수는 무대 크기와 보폭에 맞춰 다시 계산돼요. 앞·뒤는 늘 무대 기준(앞 = 객석 쪽)이에요.</p>
+      </div>
+    </details>
   </header>
 
-  <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-tab="sections">구간별 대형</button>
-    <button role="tab" aria-selected="false" data-tab="roster">학생 번호표</button>
-    <button role="tab" aria-selected="false" data-tab="guide">연습 순서 제안</button>
-  </div>
-
-  <section id="tab-sections">
-    <div class="layout">
-      <nav class="list" id="seclist" aria-label="구간 목록"></nav>
-      <div class="main">
-        <div class="card">
-          <div class="sechead">
-            <h2 id="sectitle"></h2>
-            <span class="time" id="sectime"></span>
-          </div>
-          <div class="nav">
-            <button class="btn" id="prev">◀ 이전 구간</button>
-            <button class="btn" id="next">다음 구간 ▶</button>
-            <label style="margin-left:auto;display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)">학생 강조
-              <select id="hl"><option value="">전체 보기</option></select>
-            </label>
-          </div>
-          <div class="timeline" id="timeline" aria-hidden="true"></div>
-          <div class="stage" id="stage"></div>
-          <div class="legend">
-            <span><b>자세</b> 실선 = 서기 · 점선 테두리 = 무릎/앉기 · 그림자 타원 = 엎드리기 · 점선 호살표 = 회전 · 화살표 = 이동</span>
-            <span><b>부채</b> 위 두 개 = 머리 위 · 아래 두 개 = 앞으로 · 굵은 고리 = 부채 원(꽃송이) · 양옆 = 옆으로 펼침 · 물결선 = 수평 물결 · 세로 3개 = 층층 · 짧은 선 = 내림</span>
-          </div>
-          <p class="summary" id="summary"></p>
-          <div class="cues" id="cues"></div>
-          <p class="conf" id="conf"></p>
-          <div class="tablewrap">
-            <table id="postable">
-              <thead><tr><th>번호</th><th>위치</th><th>자세</th><th>부채</th><th>번호</th><th>위치</th><th>자세</th><th>부채</th></tr></thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-        <div class="card trace" id="tracecard" hidden>
-          <h3 style="font-family:'Gowun Batang',serif;margin:0 0 4px;font-size:19px" id="tracetitle"></h3>
-          <p class="sub" style="margin:0">구간을 누르면 그 대형으로 이동합니다.</p>
-          <ol id="tracelist"></ol>
+  <section class="player">
+    <div class="vidcol">
+      <div class="vidbox" id="vidBox">
+        <video id="video" playsinline preload="auto"></video>
+        <div class="ytbox" id="ytBox" hidden><div id="ytPlayer"></div></div>
+        <div class="vidmsg" id="vidMsg">
+          <p><b>원본 영상을 옆에 놓고 볼 수 있어요.</b></p>
+          <label class="btn primary">영상 파일 열기 (mp4)<input type="file" id="vidPick" accept="video/*" hidden></label>
+          <button class="btn" id="ytBtn" type="button">유튜브로 보기</button>
+          <p class="note">파일은 이 컴퓨터에서만 열리고 어디에도 올라가지 않아요. 한 프레임씩 넘기기는 파일로 열 때 가장 정확해요.</p>
         </div>
       </div>
+      <div class="count"><span class="clabel">박 세기</span><span id="countBig">–</span><span class="csub" id="countSub">음악 전</span></div>
     </div>
-  </section>
-
-  <section id="tab-roster" hidden>
-    <div class="card roster">
-      <h3>학생 번호표 — 시작 위치 기준</h3>
-      <p>영상 속 학생은 의상이 같아 얼굴로 끝까지 추적하기는 어렵습니다. 그래서 <b>0:16 시작 자세의 위치</b>로 번호를 정하고, 이후 구간은 자리 이동의 연속성으로 추정했습니다. 우리 반 학생을 이 번호에 배정하면 모든 구간의 자리와 동작이 정해집니다. "추정"으로 표시된 구간은 학생 수·역할(서는 사람 수, 앉는 사람 수)은 맞지만 어떤 번호가 어디 서는지는 선생님이 바꾸셔도 됩니다.</p>
-      <div class="two">
-        <div class="tablewrap"><table id="rosterG"><thead><tr><th>번호</th><th>시작 위치 · 주요 역할</th></tr></thead><tbody></tbody></table></div>
-        <div class="tablewrap"><table id="rosterB"><thead><tr><th>번호</th><th>시작 위치 · 주요 역할</th></tr></thead><tbody></tbody></table></div>
+    <div class="diagcol">
+      <div class="dtabs" role="tablist">
+        <button role="tab" data-mode="top" aria-selected="true">위에서 본 대형</button>
+        <button role="tab" data-mode="front" aria-selected="false">객석에서 본 그림</button>
       </div>
-      <p class="note">인원이 다르면: 여자가 적을 때는 여9·여10·여12·여13(뒤에서 서는 조)부터 빼고, 남자가 적을 때는 남2·남3·남6·남7부터 빼면 앞줄 동작과 솔로·날개 역할이 그대로 유지됩니다.</p>
+      <div class="diag" id="diag"></div>
+      <p class="legend">원 = 여 · 네모 = 남 · 점선 테두리 = 앉기 · 점선 호 = 회전 · 점선 화살표 = 이동 경로(촘촘한 점 = 기다렸다 출발) · 번호를 누르면 그 학생만 따라가요</p>
     </div>
   </section>
 
-  <section id="tab-guide" hidden>
-    <div class="card guide">
-      <h3>연습 순서 제안</h3>
-      <p>동작은 크게 <b>6가지 기본 부채 동작</b>의 조합입니다. 기본 동작을 먼저 익힌 뒤 대형 전환을 연습하면 빠릅니다.</p>
-      <ol>
-        <li><b>부채 원(꽃송이)</b> — 두 부채를 붙여 얼굴 앞에 동그라미. 0:50, 1:04, 3:40, 4:53에 반복. 앉아서 만들 때 팔꿈치를 붙이면 원이 예쁘게 나옵니다.</li>
-        <li><b>머리 위 활짝</b> — 두 팔을 V자로 뻗어 부채를 펼침. 0:37, 1:07, 2:28, 3:04, 4:20.</li>
-        <li><b>수평 물결</b> — 가슴 앞에서 부채를 붙여 잡고 상체를 좌우로 기울임. 1:25, 2:16, 3:31, 4:08.</li>
-        <li><b>옆으로 펼치기(날개)</b> — 팔을 양옆으로 뻗어 부채를 눕힘. 1:04, 2:11, 3:10, 4:53.</li>
-        <li><b>제자리 회전</b> — 부채를 위로 든 채 치마가 펴지게 돎(여8·여11 담당). 0:44, 1:19, 2:28, 4:48.</li>
-        <li><b>파도(웨이브)</b> — 왼쪽부터 차례로 팔을 올렸다 내림. 4:23~4:41.</li>
-      </ol>
-      <p><b>추천 연습 순서</b></p>
-      <ol>
-        <li>기본 6동작을 자리에서 음악 없이 → 음악에 맞춰.</li>
-        <li>구간 21~22(4:07~4:41) 한 줄 물결·파도: 전원이 같은 동작이라 가장 쉽고 성취감이 큼.</li>
-        <li>구간 18~19(3:31~3:46) 두 줄 앉아 꽃송이: 앞줄/뒷줄 개념 익히기.</li>
-        <li>구간 1~5(0:00~0:58) 도입부: 여1~7 앉기·여8 솔로·남자 부채 올리기·여9~13 등장 타이밍.</li>
-        <li>구간 6~7(0:58~1:25) 큰 꽃 아치 → 두 줄 전환.</li>
-        <li>구간 8~12(1:25~2:23) 짝 동작·옆걸음·세 송이 꽃: 전환이 가장 많은 부분, 걷는 경로를 바닥 테이프로 표시.</li>
-        <li>구간 13~17(2:23~3:31) 남자 파트와 여4 솔로·듀엣: 남자만 따로 연습한 뒤 합침.</li>
-        <li>구간 20(3:46~4:07) 두 송이 회전 꽃, 구간 23~25 피날레·인사.</li>
-        <li>전체 통연습은 구간 번호로 끊어 "몇 번 구간부터"라고 지시하면 편합니다.</li>
-      </ol>
-      <p class="note">영상은 객석에서 촬영한 것이므로 이 페이지의 왼쪽/오른쪽은 모두 <b>객석에서 본 방향</b>입니다. 학생에게 지시할 때는 "무대에서 볼 때 반대"임을 한 번 정해 두세요.</p>
+  <section class="transport card">
+    <div class="scrub" id="scrub" role="slider" aria-label="시간" tabindex="0">
+      <div class="bands" id="bands"></div>
+      <div class="keys" id="keys"></div>
+      <div class="thumb" id="thumb"></div>
+    </div>
+    <div class="zoom" id="zoom" title="좌우로 끌면 한 프레임씩 세밀하게 움직여요"></div>
+    <div class="ctrls">
+      <button class="btn" id="bPrevBeat" title="이전 박 구간 ([)">⏮ 이전</button>
+      <button class="btn" id="bBack1" title="1초 뒤로 (Shift+←)">−1초</button>
+      <button class="btn" id="bBackF" title="1프레임 뒤로 (←)">◀ 1프레임</button>
+      <button class="btn primary" id="bPlay" title="재생/멈춤 (스페이스)">▶ 재생</button>
+      <button class="btn" id="bFwdF" title="1프레임 앞으로 (→)">1프레임 ▶</button>
+      <button class="btn" id="bFwd1" title="1초 앞으로 (Shift+→)">+1초</button>
+      <button class="btn" id="bNextBeat" title="다음 박 구간 (])">다음 ⏭</button>
+      <label class="inl">속도 <select id="speed"><option value="0.25">0.25배</option><option value="0.5">0.5배</option><option value="0.75">0.75배</option><option value="1" selected>1배</option></select></label>
+      <label class="inl"><input type="checkbox" id="loop"> 이 구간 반복</label>
+      <span class="time" id="timeLbl">0:00.00</span>
     </div>
   </section>
+
+  <section class="card beat">
+    <div class="beathead">
+      <div>
+        <p class="kicker" id="secKick"></p>
+        <h2 id="secTitle"></h2>
+        <p class="easy" id="secEasy"></p>
+      </div>
+      <div class="beatmeta">
+        <span class="bt" id="beatTime"></span>
+        <span class="cue" id="beatCue"></span>
+      </div>
+    </div>
+    <label class="memo">🎵 소리·가사 신호 메모 (선생님이 적어 두면 이 구간마다 보여요)
+      <input type="text" id="memo" placeholder="예: 북소리 두 번 / 후렴 시작">
+    </label>
+    <div class="filters">
+      <span>보기:</span>
+      <button class="chip" data-f="all" aria-pressed="true">전체</button>
+      <button class="chip" data-f="G" aria-pressed="false">여</button>
+      <button class="chip" data-f="B" aria-pressed="false">남</button>
+      <label class="inl">학생 따라가기 <select id="who"><option value="">선택 안 함</option></select></label>
+    </div>
+    <div class="tablewrap">
+      <table class="moves">
+        <thead><tr><th>번호</th><th>자리</th><th>발</th><th>팔</th><th>부채 (방향·높이)</th><th>시선</th><th>이동 · 동선</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="sections" aria-selected="true">구간 목록</button>
+    <button role="tab" data-tab="key" aria-selected="false">핵심 대형 그림</button>
+    <button role="tab" data-tab="student" aria-selected="false">학생별 동선표</button>
+    <button role="tab" data-tab="dict" aria-selected="false">부채 동작 사전</button>
+    <button role="tab" data-tab="safety" aria-selected="false">안전 동선 점검</button>
+    <button role="tab" data-tab="practice" aria-selected="false">연습 순서</button>
+  </nav>
+  <section class="panel" id="p-sections"></section>
+  <section class="panel" id="p-key" hidden></section>
+  <section class="panel" id="p-student" hidden>
+    <div class="stuhead">
+      <label>학생 <select id="stuSel"></select></label>
+      <label>이름 <input type="text" id="stuName" placeholder="(선택) 이름을 적으면 인쇄에 나와요"></label>
+      <button class="btn" id="stuPrint">🖨 이 학생 동선표 인쇄</button>
+    </div>
+    <div id="stuBody"></div>
+  </section>
+  <section class="panel" id="p-dict" hidden></section>
+  <section class="panel" id="p-safety" hidden></section>
+  <section class="panel" id="p-practice" hidden></section>
+
+  <footer class="foot">
+    <p>원본: 2024 거학초 6학년 학예회 「아름다운 나라」 부채춤 영상(5:48)을 1초 단위로 보고 19명(여10·남9)에 맞게 새로 짠 안무예요. 박자는 음악에서 잰 값(약 123 BPM, 8박 ≈ 3.9초)이라 실제 음원에 따라 조금 다를 수 있어요. <a href="old/analysis-21.html">처음 만든 원본 분석(21명) 보기</a></p>
+  </footer>
 </div>
-
-<script>// 부채춤 '아름다운 나라' (거학초 6학년, 2024 학예회) 동작·대형 분석 데이터
-// 좌표: x 0(객석에서 볼 때 왼쪽) ~ 100(오른쪽), y 0(무대 뒤) ~ 60(무대 앞)
-// pose: stand(서기) kneel(무릎/앉기) low(엎드리기·웅크리기) spin(회전) walk(이동)
-// fan: down(내림) front(앞) up(머리 위) circle(부채 원/꽃) side(양옆으로) wave(수평 물결) stack(층층) off(무대 밖)
-window.DANCE_DATA = {
-  video: { id: "wA_sY-Wriqw", title: "부채춤_아름다운 나라 | 6학년 부채춤 공연 | 2024 거학초 학예회", duration: 348 },
-  students: [
-    { id: "G1", label: "여1", group: "A", role: "왼쪽 대기줄 1번(가장 왼쪽) → 중앙 꽃조" },
-    { id: "G2", label: "여2", group: "A", role: "왼쪽 대기줄 2번 → 중앙 꽃조(앞줄 앉기)" },
-    { id: "G3", label: "여3", group: "A", role: "왼쪽 대기줄 3번 → 중앙 꽃조(앞줄 앉기)" },
-    { id: "G4", label: "여4", group: "A", role: "왼쪽 대기줄 4번 → 중앙 솔로②(2:25~3:30 중앙 앉아 층층부채·듀엣)" },
-    { id: "G5", label: "여5", group: "A", role: "왼쪽 대기줄 5번 → 중앙 꽃조(앞줄 앉기)" },
-    { id: "G6", label: "여6", group: "A", role: "왼쪽 대기줄 6번 → 중앙 꽃조(앞줄 앉기)" },
-    { id: "G7", label: "여7", group: "A", role: "왼쪽 대기줄 7번(중앙에 가장 가까움) → 중앙 꽃조" },
-    { id: "G8", label: "여8", group: "S", role: "중앙 솔로①(시작 중앙 무릎, 0:40 부채 올리기, 왼쪽 회전 담당)" },
-    { id: "G9", label: "여9", group: "L", role: "0:43 왼쪽에서 등장 → 왼쪽 서는 조" },
-    { id: "G10", label: "여10", group: "L", role: "0:43 왼쪽에서 등장 → 왼쪽 서는 조" },
-    { id: "G11", label: "여11", group: "R", role: "0:43 오른쪽에서 등장 → 오른쪽 회전 담당" },
-    { id: "G12", label: "여12", group: "R", role: "0:43 오른쪽에서 등장 → 오른쪽 서는 조" },
-    { id: "G13", label: "여13", group: "R", role: "0:43 오른쪽에서 등장 → 오른쪽 서는 조" },
-    { id: "B1", label: "남1", group: "BL", role: "왼쪽 앞 남자조(가장 왼쪽) · 3:05 왼쪽 앞 '날개' 담당" },
-    { id: "B2", label: "남2", group: "BL", role: "왼쪽 앞 남자조" },
-    { id: "B3", label: "남3", group: "BL", role: "왼쪽 앞 남자조" },
-    { id: "B4", label: "남4", group: "BL", role: "왼쪽 앞 남자조(중앙 쪽) · 2:35 중앙 남자 듀오" },
-    { id: "B5", label: "남5", group: "BR", role: "오른쪽 앞 남자조(중앙 쪽) · 2:35 중앙 남자 듀오" },
-    { id: "B6", label: "남6", group: "BR", role: "오른쪽 앞 남자조" },
-    { id: "B7", label: "남7", group: "BR", role: "오른쪽 앞 남자조" },
-    { id: "B8", label: "남8", group: "BR", role: "오른쪽 앞 남자조(가장 오른쪽) · 3:05 오른쪽 앞 '날개' 담당" }
-  ],
-  sections: [
-    {
-      id: 1, start: 0, end: 20, title: "시작 자세 (암전 → 조명)",
-      summary: "음악 전 정지 자세. 여자 대기줄은 고개 숙이고 부채를 아래로 늘어뜨려 잡는다. 여8은 중앙에 무릎 꿇고 앉아 부채를 바닥에 놓고 고개를 숙인다. 남자는 좌·우 앞쪽에 낮게 웅크린다(엎드리듯 앉기). 여9~13은 무대 밖(양쪽 날개)에서 대기.",
-      cues: ["0:12 조명 켜짐, 모두 정지 유지", "0:20 음악 시작과 함께 여8이 부채를 들며 일어남"],
-      confidence: "확실",
-      positions: {
-        G1:{x:4,y:16,pose:"stand",fan:"down"}, G2:{x:9,y:17,pose:"stand",fan:"down"}, G3:{x:14,y:18,pose:"stand",fan:"down"},
-        G4:{x:19,y:19,pose:"stand",fan:"down"}, G5:{x:25,y:20,pose:"stand",fan:"down"}, G6:{x:30,y:21,pose:"stand",fan:"down"},
-        G7:{x:36,y:22,pose:"stand",fan:"down"}, G8:{x:50,y:42,pose:"kneel",fan:"down"},
-        G9:{x:-5,y:30,pose:"stand",fan:"off"}, G10:{x:-5,y:36,pose:"stand",fan:"off"},
-        G11:{x:105,y:28,pose:"stand",fan:"off"}, G12:{x:105,y:34,pose:"stand",fan:"off"}, G13:{x:105,y:40,pose:"stand",fan:"off"},
-        B1:{x:5,y:46,pose:"low",fan:"down"}, B2:{x:11,y:44,pose:"low",fan:"down"}, B3:{x:17,y:44,pose:"low",fan:"down"}, B4:{x:21,y:47,pose:"low",fan:"down"},
-        B5:{x:82,y:46,pose:"low",fan:"down"}, B6:{x:86,y:44,pose:"low",fan:"down"}, B7:{x:90,y:44,pose:"low",fan:"down"}, B8:{x:94,y:47,pose:"low",fan:"down"}
-      }
-    },
-    {
-      id: 2, start: 20, end: 30, title: "여8 일어나기 · 대기줄 중앙으로 모이기",
-      summary: "여8이 부채를 들어 올리며 천천히 일어나 좌우로 크게 흔든다. 대기줄은 중앙에 가까운 여5·6·7부터 걸어 나와(0:23) 여8을 둘러싸는 반원을 만들고, 여1~4가 뒤따라 합류(0:26~0:29). 걸으며 부채를 어깨 높이에서 좌우로 부드럽게 흔든다. 남자는 계속 낮은 자세.",
-      cues: ["0:23 여5·6·7 먼저 출발", "0:26 여1~4 합류", "0:29 여8 중심 반원 완성"],
-      confidence: "확실",
-      positions: {
-        G1:{x:33,y:30,pose:"walk",fan:"front"}, G2:{x:36,y:35,pose:"walk",fan:"front"}, G3:{x:40,y:38,pose:"walk",fan:"front"},
-        G4:{x:44,y:31,pose:"walk",fan:"front"}, G5:{x:55,y:38,pose:"walk",fan:"front"}, G6:{x:60,y:35,pose:"walk",fan:"front"},
-        G7:{x:64,y:31,pose:"walk",fan:"front"}, G8:{x:50,y:40,pose:"stand",fan:"front"},
-        G9:{x:-5,y:30,pose:"stand",fan:"off"}, G10:{x:-5,y:36,pose:"stand",fan:"off"},
-        G11:{x:105,y:28,pose:"stand",fan:"off"}, G12:{x:105,y:34,pose:"stand",fan:"off"}, G13:{x:105,y:40,pose:"stand",fan:"off"},
-        B1:{x:5,y:46,pose:"low",fan:"down"}, B2:{x:11,y:44,pose:"low",fan:"down"}, B3:{x:17,y:44,pose:"low",fan:"down"}, B4:{x:21,y:47,pose:"low",fan:"down"},
-        B5:{x:82,y:46,pose:"low",fan:"down"}, B6:{x:86,y:44,pose:"low",fan:"down"}, B7:{x:90,y:44,pose:"low",fan:"down"}, B8:{x:94,y:47,pose:"low",fan:"down"}
-      }
-    },
-    {
-      id: 3, start: 30, end: 40, title: "중앙 첫 꽃(봉오리) · 남자 부채 올리기",
-      summary: "여1~7이 여8 앞에 부채꼴로 무릎 앉아 부채를 바닥 가까이에서 좌우로 흔든다(0:30). 여8은 중앙에 서서 두 부채를 머리 위로 모아 올린다. 0:34 여1~7이 일어나 두 팔을 위로 뻗어 아치를 만들고 여8은 그 안에 웅크린다 → 0:37 부채를 위로 활짝 펴 '봉오리' → 0:40 여1~7 다시 앉고 여8이 일어나 부채를 높이 든다. 남자는 0:30에 좌·우에서 일어나 부채를 머리 위로 들고 좌우로 크게 흔든다(하늘 부채).",
-      cues: ["0:30 여1~7 앉기, 남자 일어나기", "0:34 여1~7 일어나 아치", "0:37 봉오리 활짝", "0:40 여8 부채 위로, 여1~7 앉기"],
-      confidence: "확실",
-      positions: {
-        G1:{x:35,y:44,pose:"kneel",fan:"front"}, G2:{x:38,y:47,pose:"kneel",fan:"front"}, G3:{x:43,y:49,pose:"kneel",fan:"front"},
-        G4:{x:49,y:51,pose:"kneel",fan:"front"}, G5:{x:55,y:49,pose:"kneel",fan:"front"}, G6:{x:60,y:47,pose:"kneel",fan:"front"},
-        G7:{x:66,y:44,pose:"kneel",fan:"front"}, G8:{x:50,y:40,pose:"stand",fan:"up"},
-        G9:{x:-5,y:30,pose:"stand",fan:"off"}, G10:{x:-5,y:36,pose:"stand",fan:"off"},
-        G11:{x:105,y:28,pose:"stand",fan:"off"}, G12:{x:105,y:34,pose:"stand",fan:"off"}, G13:{x:105,y:40,pose:"stand",fan:"off"},
-        B1:{x:6,y:36,pose:"stand",fan:"up"}, B2:{x:10,y:34,pose:"stand",fan:"up"}, B3:{x:14,y:34,pose:"stand",fan:"up"}, B4:{x:18,y:36,pose:"stand",fan:"up"},
-        B5:{x:82,y:36,pose:"stand",fan:"up"}, B6:{x:86,y:34,pose:"stand",fan:"up"}, B7:{x:90,y:34,pose:"stand",fan:"up"}, B8:{x:94,y:36,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 4, start: 40, end: 50, title: "여9~13 등장 · 좌우 회전 시작",
-      summary: "여8이 부채를 내리고 왼쪽으로 걸어 나간다(0:41). 여9·10이 왼쪽 날개에서, 여11·12·13이 오른쪽 날개에서 부채를 낮게 들고 등장(0:42~0:44). 중앙의 여1~7은 앉은 채 부채를 바닥에서 앞으로 밀어냈다가 당긴다. 0:44부터 여8(왼쪽)과 여11(오른쪽)이 부채를 위로 든 채 치마가 펴지도록 제자리 큰 회전. 남자는 부채를 내려 허리 옆에서 좌우로 흔든다.",
-      cues: ["0:41 여8 왼쪽으로 이동", "0:43 여9~13 등장", "0:44 여8·여11 회전 시작"],
-      confidence: "추정(등장 순서)",
-      positions: {
-        G1:{x:33,y:46,pose:"kneel",fan:"front"}, G2:{x:38,y:48,pose:"kneel",fan:"front"}, G3:{x:43,y:50,pose:"kneel",fan:"front"},
-        G4:{x:50,y:51,pose:"kneel",fan:"front"}, G5:{x:56,y:50,pose:"kneel",fan:"front"}, G6:{x:61,y:48,pose:"kneel",fan:"front"},
-        G7:{x:66,y:46,pose:"kneel",fan:"front"}, G8:{x:20,y:42,pose:"spin",fan:"up"},
-        G9:{x:6,y:30,pose:"stand",fan:"front"}, G10:{x:11,y:32,pose:"stand",fan:"front"},
-        G11:{x:78,y:42,pose:"spin",fan:"up"}, G12:{x:86,y:26,pose:"stand",fan:"front"}, G13:{x:91,y:28,pose:"stand",fan:"front"},
-        B1:{x:3,y:38,pose:"stand",fan:"down"}, B2:{x:8,y:36,pose:"stand",fan:"down"}, B3:{x:12,y:36,pose:"stand",fan:"down"}, B4:{x:16,y:38,pose:"stand",fan:"down"},
-        B5:{x:84,y:38,pose:"stand",fan:"down"}, B6:{x:88,y:36,pose:"stand",fan:"down"}, B7:{x:92,y:36,pose:"stand",fan:"down"}, B8:{x:96,y:38,pose:"stand",fan:"down"}
-      }
-    },
-    {
-      id: 5, start: 50, end: 58, title: "중앙 부채 꽃송이 · 좌우 회전",
-      summary: "앉은 여1~7이 두 부채를 붙여 동그란 '꽃송이'를 만든다. 0:50 머리 위로 들어 보였다가 → 0:55 얼굴 앞으로 내려 얼굴을 가린다(관객에게 꽃 7송이가 보임). 여8·여11은 좌우에서 부채를 높이 든 채 계속 회전. 여9·10(왼쪽 뒤)과 여12·13(오른쪽 뒤)은 서서 부채를 머리 위에서 좌우로 흔든다. 남자는 뒤쪽에서 부채를 옆으로 펼쳐 흔든다.",
-      cues: ["0:50 꽃송이 위로", "0:55 꽃송이 얼굴 앞으로"],
-      confidence: "확실",
-      positions: {
-        G1:{x:33,y:46,pose:"kneel",fan:"circle"}, G2:{x:38,y:48,pose:"kneel",fan:"circle"}, G3:{x:43,y:50,pose:"kneel",fan:"circle"},
-        G4:{x:50,y:51,pose:"kneel",fan:"circle"}, G5:{x:56,y:50,pose:"kneel",fan:"circle"}, G6:{x:61,y:48,pose:"kneel",fan:"circle"},
-        G7:{x:66,y:46,pose:"kneel",fan:"circle"}, G8:{x:18,y:42,pose:"spin",fan:"up"},
-        G9:{x:8,y:28,pose:"stand",fan:"up"}, G10:{x:14,y:30,pose:"stand",fan:"up"},
-        G11:{x:78,y:42,pose:"spin",fan:"up"}, G12:{x:86,y:28,pose:"stand",fan:"up"}, G13:{x:92,y:30,pose:"stand",fan:"up"},
-        B1:{x:3,y:36,pose:"stand",fan:"side"}, B2:{x:7,y:34,pose:"stand",fan:"side"}, B3:{x:11,y:34,pose:"stand",fan:"side"}, B4:{x:15,y:37,pose:"stand",fan:"side"},
-        B5:{x:84,y:37,pose:"stand",fan:"side"}, B6:{x:88,y:34,pose:"stand",fan:"side"}, B7:{x:92,y:34,pose:"stand",fan:"side"}, B8:{x:96,y:36,pose:"stand",fan:"side"}
-      }
-    },
-    {
-      id: 6, start: 58, end: 70, title: "큰 꽃(아치) — 여자 전체 중앙 집결",
-      summary: "여자 전원이 중앙으로 모여 2층 꽃을 만든다. 앞줄 4명(여2·3·5·6)은 앉아서 꽃송이(부채 원)를 얼굴 앞에, 뒷줄 8명은 서서 부채를 바깥쪽으로 펼쳐 큰 아치를 만든다(1:04). 1:07에 서 있는 전원이 부채를 머리 위로 활짝 펼쳐 '큰 꽃'을 완성. 여8은 왼쪽 끝(꽃의 바깥)에서 서서 부채를 좌우로 흔든다. 남자는 좌·우 끝으로 물러나 부채를 옆으로 흔들고, 남4는 왼쪽 앞에 무릎 앉아 부채 원.",
-      cues: ["1:01 전원 중앙으로 걸어 모임", "1:04 아치", "1:07 큰 꽃 활짝", "1:10 부채 위로 든 채 걷기 시작"],
-      confidence: "앞줄/뒷줄 구성은 추정",
-      positions: {
-        G2:{x:36,y:53,pose:"kneel",fan:"circle"}, G3:{x:43,y:55,pose:"kneel",fan:"circle"}, G5:{x:53,y:55,pose:"kneel",fan:"circle"}, G6:{x:60,y:53,pose:"kneel",fan:"circle"},
-        G9:{x:30,y:36,pose:"stand",fan:"side"}, G10:{x:35,y:30,pose:"stand",fan:"side"}, G1:{x:41,y:27,pose:"stand",fan:"side"}, G4:{x:47,y:25,pose:"stand",fan:"side"},
-        G7:{x:53,y:25,pose:"stand",fan:"side"}, G12:{x:59,y:27,pose:"stand",fan:"side"}, G13:{x:65,y:30,pose:"stand",fan:"side"}, G11:{x:70,y:36,pose:"stand",fan:"side"},
-        G8:{x:21,y:36,pose:"stand",fan:"wave"},
-        B1:{x:5,y:30,pose:"stand",fan:"side"}, B2:{x:9,y:34,pose:"stand",fan:"side"}, B3:{x:13,y:38,pose:"stand",fan:"side"}, B4:{x:17,y:50,pose:"kneel",fan:"circle"},
-        B5:{x:84,y:38,pose:"stand",fan:"side"}, B6:{x:88,y:34,pose:"stand",fan:"side"}, B7:{x:92,y:32,pose:"stand",fan:"side"}, B8:{x:97,y:36,pose:"stand",fan:"side"}
-      }
-    },
-    {
-      id: 7, start: 70, end: 85, title: "두 줄 · 부채 아치 · 여8 회전",
-      summary: "1:10 서 있던 여자들이 부채를 머리 위로 든 채 걸어 두 줄을 만든다. 앞줄(여2·3·5·6 + 여1)은 앉아 꽃송이, 뒷줄은 서서 부채를 옆으로 펼친다(1:13). 1:16 여8(왼쪽 앞)과 여11(오른쪽 앞)이 앞으로 나와 부채를 양옆으로 크게 벌리고, 1:19 여8은 제자리 회전. 1:22 뒷줄 전원이 부채를 위로 올려 아치를 다시 만든다. 남자는 좌우 끝에서 부채를 옆으로 흔든다.",
-      cues: ["1:13 두 줄 완성", "1:16 여8·여11 앞으로", "1:19 여8 회전", "1:22 뒷줄 아치"],
-      confidence: "추정",
-      positions: {
-        G1:{x:27,y:50,pose:"kneel",fan:"circle"}, G2:{x:36,y:52,pose:"kneel",fan:"circle"}, G3:{x:45,y:53,pose:"kneel",fan:"circle"}, G5:{x:55,y:53,pose:"kneel",fan:"circle"}, G6:{x:63,y:51,pose:"kneel",fan:"circle"},
-        G9:{x:28,y:28,pose:"stand",fan:"up"}, G10:{x:35,y:27,pose:"stand",fan:"up"}, G4:{x:42,y:26,pose:"stand",fan:"up"}, G7:{x:50,y:26,pose:"stand",fan:"up"},
-        G12:{x:58,y:26,pose:"stand",fan:"up"}, G13:{x:66,y:27,pose:"stand",fan:"up"},
-        G8:{x:20,y:40,pose:"spin",fan:"side"}, G11:{x:77,y:40,pose:"stand",fan:"side"},
-        B1:{x:6,y:32,pose:"stand",fan:"side"}, B2:{x:10,y:36,pose:"stand",fan:"side"}, B3:{x:14,y:40,pose:"stand",fan:"side"}, B4:{x:18,y:48,pose:"kneel",fan:"circle"},
-        B5:{x:84,y:40,pose:"stand",fan:"side"}, B6:{x:88,y:36,pose:"stand",fan:"side"}, B7:{x:92,y:33,pose:"stand",fan:"side"}, B8:{x:96,y:36,pose:"stand",fan:"side"}
-      }
-    },
-    {
-      id: 8, start: 85, end: 91, title: "한 줄 수평 물결",
-      summary: "전원이 무대를 가로지르는 한 줄로 선다(왼쪽 남1~4 → 여자 → 오른쪽 남5~8). 부채를 가슴 앞에서 수평으로 붙여 잡고 상체와 함께 좌우로 크게 흔들어 물결을 만든다(1:25~1:30). 뒤에 선 사람(여4·여7)은 앞사람 어깨 사이로 부채가 보이게 한다.",
-      cues: ["1:25 줄 정렬", "1:28 물결 좌우 2회"],
-      confidence: "확실(순서는 추정)",
-      positions: {
-        B1:{x:8,y:38,pose:"stand",fan:"wave"}, B2:{x:12,y:36,pose:"stand",fan:"wave"}, B3:{x:17,y:36,pose:"stand",fan:"wave"}, B4:{x:20,y:34,pose:"stand",fan:"wave"},
-        G8:{x:26,y:38,pose:"stand",fan:"wave"}, G9:{x:33,y:38,pose:"stand",fan:"wave"}, G1:{x:37,y:38,pose:"stand",fan:"wave"}, G2:{x:42,y:38,pose:"stand",fan:"wave"},
-        G4:{x:44,y:30,pose:"stand",fan:"wave"}, G3:{x:52,y:38,pose:"stand",fan:"wave"}, G5:{x:56,y:38,pose:"stand",fan:"wave"}, G6:{x:61,y:38,pose:"stand",fan:"wave"},
-        G7:{x:70,y:30,pose:"stand",fan:"wave"}, G10:{x:67,y:38,pose:"stand",fan:"wave"}, G12:{x:72,y:38,pose:"stand",fan:"wave"}, G13:{x:76,y:38,pose:"stand",fan:"wave"}, G11:{x:79,y:36,pose:"stand",fan:"wave"},
-        B5:{x:83,y:38,pose:"stand",fan:"wave"}, B6:{x:86,y:36,pose:"stand",fan:"wave"}, B7:{x:89,y:36,pose:"stand",fan:"wave"}, B8:{x:93,y:38,pose:"stand",fan:"wave"}
-      }
-    },
-    {
-      id: 9, start: 91, end: 105, title: "짝 부채 원(둘이 마주 보기)",
-      summary: "둘씩 짝을 지어 춤춘다. 1:31 짝과 마주 보고 두 사람의 부채 4개를 아래에서 모아 큰 원을 만든다. 1:37 등을 맞대고 부채를 위로 올려 흔들기 → 1:40 다시 마주 보고 아래 원 → 1:43 부채를 앞으로 든 채 짝과 함께 옆걸음 이동. 남자도 좌·우에서 둘씩 짝을 지어 같은 동작.",
-      cues: ["1:31 마주 보고 아래 원", "1:37 등 맞대고 위로", "1:43 옆걸음 이동"],
-      confidence: "짝 편성은 추정",
-      positions: {
-        B1:{x:12,y:40,pose:"stand",fan:"circle"}, B2:{x:16,y:40,pose:"stand",fan:"circle"}, B3:{x:22,y:32,pose:"stand",fan:"circle"}, B4:{x:26,y:32,pose:"stand",fan:"circle"},
-        G8:{x:26,y:44,pose:"stand",fan:"circle"}, G9:{x:30,y:44,pose:"stand",fan:"circle"},
-        G1:{x:34,y:40,pose:"stand",fan:"circle"}, G2:{x:38,y:40,pose:"stand",fan:"circle"}, G3:{x:42,y:40,pose:"stand",fan:"circle"}, G4:{x:36,y:30,pose:"stand",fan:"circle"}, G7:{x:40,y:30,pose:"stand",fan:"circle"},
-        G5:{x:62,y:40,pose:"stand",fan:"circle"}, G6:{x:66,y:40,pose:"stand",fan:"circle"}, G10:{x:64,y:30,pose:"stand",fan:"circle"}, G12:{x:68,y:30,pose:"stand",fan:"circle"},
-        G11:{x:74,y:44,pose:"stand",fan:"circle"}, G13:{x:78,y:44,pose:"stand",fan:"circle"},
-        B5:{x:82,y:32,pose:"stand",fan:"circle"}, B6:{x:86,y:32,pose:"stand",fan:"circle"}, B7:{x:90,y:40,pose:"stand",fan:"circle"}, B8:{x:94,y:40,pose:"stand",fan:"circle"}
-      }
-    },
-    {
-      id: 10, start: 105, end: 121, title: "옆을 보고 걷기 · 부채 큰 원 돌리기",
-      summary: "여자 전원이 한 줄로 서서 몸을 왼쪽(무대 왼쪽)으로 돌린다. 한 부채는 머리 위, 한 부채는 앞으로 내밀어 든 채 1:46~1:49 왼쪽으로 걸어간다. 1:52 멈춰서 두 부채를 앞에서 모아 원을 만들고, 1:55 몸을 중앙 쪽으로 돌려 부채를 위·앞으로 교차. 1:58 반원 대형으로 부채를 양옆으로 펼치고 2:01 부채로 앞에서 큰 원을 돌린다. 남자는 좌우 끝에서 부채 원.",
-      cues: ["1:46 왼쪽 보고 걷기", "1:52 앞에서 원", "1:58 반원, 부채 옆으로", "2:01 큰 원 돌리기"],
-      confidence: "추정",
-      positions: {
-        B1:{x:5,y:38,pose:"stand",fan:"circle"}, B2:{x:9,y:34,pose:"stand",fan:"circle"}, B3:{x:13,y:30,pose:"stand",fan:"circle"}, B4:{x:17,y:34,pose:"stand",fan:"circle"},
-        G8:{x:22,y:38,pose:"walk",fan:"up"}, G9:{x:27,y:38,pose:"walk",fan:"up"}, G1:{x:32,y:38,pose:"walk",fan:"up"}, G2:{x:37,y:38,pose:"walk",fan:"up"},
-        G3:{x:42,y:38,pose:"walk",fan:"up"}, G4:{x:47,y:38,pose:"walk",fan:"up"}, G5:{x:52,y:38,pose:"walk",fan:"up"}, G6:{x:57,y:38,pose:"walk",fan:"up"},
-        G7:{x:62,y:38,pose:"walk",fan:"up"}, G10:{x:67,y:38,pose:"walk",fan:"up"}, G12:{x:72,y:38,pose:"walk",fan:"up"}, G13:{x:77,y:38,pose:"walk",fan:"up"}, G11:{x:81,y:38,pose:"walk",fan:"up"},
-        B5:{x:85,y:34,pose:"stand",fan:"circle"}, B6:{x:89,y:30,pose:"stand",fan:"circle"}, B7:{x:93,y:34,pose:"stand",fan:"circle"}, B8:{x:97,y:38,pose:"stand",fan:"circle"}
-      }
-    },
-    {
-      id: 11, start: 121, end: 136, title: "세 송이 꽃 (좌 · 중앙 · 우)",
-      summary: "세 그룹이 각각 꽃송이를 만든다. 2:04 그룹별로 모여 부채를 머리 위로 올리기 → 2:08 위에서 부채를 활짝 펼쳐 세 송이 완성(왼쪽: 남1~4+여8·9, 중앙: 여1~7+여10, 오른쪽: 남5~8+여11·12·13). 2:11 부채를 옆으로 눕혀 양팔을 날개처럼 펼치고 그룹 전체가 천천히 회전(시계 방향) → 2:14 부채를 수평으로 흔들며 송이가 풀린다.",
-      cues: ["2:04 그룹 모이기", "2:08 세 송이", "2:11 날개 펼치고 회전", "2:14 풀기"],
-      confidence: "그룹 구성 추정",
-      positions: {
-        B1:{x:8,y:30,pose:"stand",fan:"up"}, B2:{x:13,y:26,pose:"stand",fan:"up"}, B3:{x:18,y:28,pose:"stand",fan:"up"}, B4:{x:14,y:36,pose:"stand",fan:"up"},
-        G8:{x:10,y:40,pose:"kneel",fan:"circle"}, G9:{x:19,y:40,pose:"kneel",fan:"circle"},
-        G1:{x:36,y:30,pose:"stand",fan:"up"}, G2:{x:41,y:26,pose:"stand",fan:"up"}, G3:{x:47,y:24,pose:"stand",fan:"up"}, G4:{x:53,y:24,pose:"stand",fan:"up"},
-        G5:{x:59,y:26,pose:"stand",fan:"up"}, G6:{x:64,y:30,pose:"stand",fan:"up"}, G7:{x:44,y:40,pose:"kneel",fan:"circle"}, G10:{x:56,y:40,pose:"kneel",fan:"circle"},
-        B5:{x:82,y:28,pose:"stand",fan:"up"}, B6:{x:87,y:26,pose:"stand",fan:"up"}, B7:{x:92,y:28,pose:"stand",fan:"up"}, B8:{x:87,y:36,pose:"stand",fan:"up"},
-        G11:{x:80,y:40,pose:"kneel",fan:"circle"}, G12:{x:88,y:42,pose:"kneel",fan:"circle"}, G13:{x:95,y:40,pose:"kneel",fan:"circle"}
-      }
-    },
-    {
-      id: 12, start: 136, end: 143, title: "한 줄 물결 (남자 앞으로 나올 준비)",
-      summary: "세 송이가 풀리며 전원이 다시 가로 한 줄이 된다. 부채를 가슴 앞에서 수평으로 잡고 상체를 좌우로 크게 기울이며 물결(2:16~2:20). 2:20 음악이 바뀌면 부채를 내리고 남자들이 앞으로 걸어 나오기 시작(남8이 먼저 중앙 앞으로).",
-      cues: ["2:16 한 줄", "2:19 물결", "2:20 남자 앞으로"],
-      confidence: "확실(순서 추정)",
-      positions: {
-        G8:{x:9,y:40,pose:"stand",fan:"wave"}, B1:{x:14,y:32,pose:"stand",fan:"wave"}, G9:{x:18,y:40,pose:"stand",fan:"wave"}, B2:{x:24,y:34,pose:"stand",fan:"wave"},
-        G1:{x:28,y:40,pose:"stand",fan:"wave"}, B3:{x:30,y:30,pose:"stand",fan:"wave"}, G2:{x:34,y:40,pose:"stand",fan:"wave"}, G3:{x:39,y:40,pose:"stand",fan:"wave"},
-        B4:{x:40,y:30,pose:"stand",fan:"wave"}, G4:{x:45,y:40,pose:"stand",fan:"wave"}, G10:{x:50,y:40,pose:"stand",fan:"wave"}, G5:{x:55,y:40,pose:"stand",fan:"wave"},
-        G6:{x:60,y:40,pose:"stand",fan:"wave"}, B5:{x:64,y:30,pose:"stand",fan:"wave"}, G7:{x:66,y:40,pose:"stand",fan:"wave"}, B6:{x:71,y:30,pose:"stand",fan:"wave"},
-        G12:{x:72,y:40,pose:"stand",fan:"wave"}, B8:{x:74,y:46,pose:"walk",fan:"down"}, G13:{x:78,y:40,pose:"stand",fan:"wave"}, B7:{x:82,y:32,pose:"stand",fan:"wave"}, G11:{x:92,y:40,pose:"stand",fan:"wave"}
-      }
-    },
-    {
-      id: 13, start: 143, end: 157, title: "남자 파트 ① — 앞줄 무릎 · 부채 활짝",
-      summary: "남자 4명(남2·남4·남5·남8)이 앞줄에 무릎 앉아 부채를 바닥 가까이에서 좌우로 흔든다(2:25). 여4가 중앙 앞에 무릎 앉아 함께 시작하고, 여8은 왼쪽 끝에서 서서 회전(2:28~2:31). 2:28 남자·여자 전원이 부채를 머리 위로 활짝 펼쳐 무대 전체에 큰 부채 무리 → 2:31 여4가 일어나 중앙에서 두 팔을 양옆으로 크게 벌리고, 2:34 부채를 흔들며 앞줄이 부채 원을 만든다. 나머지 남자(남1·3·6·7)와 여자들은 뒤에서 서서 부채 위로.",
-      cues: ["2:25 남자 앞줄 무릎", "2:28 전원 부채 활짝", "2:31 여4 양팔 벌리기", "2:34 앞줄 부채 원"],
-      confidence: "누가 앞줄인지 추정",
-      positions: {
-        G8:{x:6,y:36,pose:"spin",fan:"up"},
-        B1:{x:11,y:30,pose:"stand",fan:"up"}, B2:{x:25,y:50,pose:"kneel",fan:"front"}, B3:{x:32,y:30,pose:"stand",fan:"up"}, B4:{x:34,y:50,pose:"kneel",fan:"front"},
-        G9:{x:20,y:30,pose:"stand",fan:"up"}, G10:{x:29,y:30,pose:"stand",fan:"up"}, G1:{x:37,y:30,pose:"stand",fan:"up"}, G2:{x:41,y:30,pose:"stand",fan:"up"},
-        G3:{x:46,y:28,pose:"stand",fan:"up"}, G4:{x:60,y:50,pose:"kneel",fan:"front"}, G5:{x:52,y:28,pose:"stand",fan:"up"}, G6:{x:58,y:30,pose:"stand",fan:"up"},
-        G7:{x:64,y:30,pose:"stand",fan:"up"}, B5:{x:73,y:50,pose:"kneel",fan:"front"}, B6:{x:70,y:30,pose:"stand",fan:"up"}, G12:{x:76,y:30,pose:"stand",fan:"up"},
-        G13:{x:82,y:30,pose:"stand",fan:"up"}, B7:{x:88,y:30,pose:"stand",fan:"up"}, G11:{x:94,y:36,pose:"stand",fan:"up"}, B8:{x:98,y:36,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 14, start: 157, end: 169, title: "남자 파트 ② — 중앙 남자 듀오 · 좌우 꽃송이",
-      summary: "남4·남5가 중앙 앞으로 나와 부채를 머리 위로 들고 마주 보며 좌우로 흔든다(2:37). 남8은 오른쪽 앞에서 부채 위로. 좌·우 여자 그룹은 앉아서 부채 원(꽃송이)을 만들고 뒤의 여자는 서서 부채 위로(2:37~2:40). 2:40 남자 셋이 부채를 위로 든 채 중앙에 모이고, 2:43 전원이 한 줄로 흩어져 부채를 앞에서 좌우로 흔드는 물결(남녀 번갈아 선다), 2:46 남자 앞줄이 부채를 아래로 늘어뜨려 흔들고 여4는 중앙에 서서 부채 앞으로.",
-      cues: ["2:37 남4·남5 중앙 듀오", "2:40 남자 셋 중앙", "2:43 남녀 한 줄 물결", "2:46 여4 중앙"],
-      confidence: "남자 개인 지정은 추정",
-      positions: {
-        G8:{x:8,y:44,pose:"kneel",fan:"circle"}, B1:{x:5,y:30,pose:"stand",fan:"up"}, B2:{x:12,y:32,pose:"stand",fan:"up"}, B3:{x:23,y:32,pose:"stand",fan:"up"},
-        G9:{x:25,y:46,pose:"kneel",fan:"circle"}, G10:{x:30,y:44,pose:"kneel",fan:"circle"}, G1:{x:29,y:30,pose:"stand",fan:"up"}, G2:{x:36,y:30,pose:"stand",fan:"up"},
-        B4:{x:46,y:36,pose:"stand",fan:"up"}, B5:{x:55,y:36,pose:"stand",fan:"up"}, G4:{x:50,y:48,pose:"stand",fan:"front"},
-        G3:{x:42,y:30,pose:"stand",fan:"up"}, G5:{x:59,y:30,pose:"stand",fan:"up"}, G6:{x:64,y:46,pose:"kneel",fan:"circle"}, G7:{x:68,y:44,pose:"kneel",fan:"circle"},
-        B8:{x:73,y:38,pose:"stand",fan:"up"}, G12:{x:66,y:30,pose:"stand",fan:"up"}, G13:{x:74,y:30,pose:"stand",fan:"up"}, B6:{x:82,y:32,pose:"stand",fan:"up"},
-        B7:{x:88,y:30,pose:"stand",fan:"up"}, G11:{x:96,y:36,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 15, start: 169, end: 185, title: "남자 부채 활짝 · 여4 중앙 앉기 · 전원 낮췄다 올리기",
-      summary: "2:49 남자 4명(남1·남3·남6·남8)이 앞줄에서 부채를 머리 위로 활짝, 여4는 중앙에서 부채를 위로 든 뒤 2:52 무릎 앉는다. 2:52~2:58 앞줄 남자들이 무릎 앉아 부채를 바닥 가까이 앞으로 뻗었다가 위로 올리기를 반복(여4는 앉아서 부채를 머리 위에서 교차). 뒷줄 여자는 서서 부채 위로 흔들기. 3:01 전원이 몸을 낮춰 웅크리며 부채를 앞으로 → 3:04 전원이 동시에 일어나며 부채를 머리 위로 활짝(폭발 동작).",
-      cues: ["2:49 남자 부채 활짝", "2:52 여4 앉기", "3:01 전원 낮추기", "3:04 전원 일어나 부채 위로"],
-      confidence: "확실(개인 지정은 추정)",
-      positions: {
-        G8:{x:3,y:36,pose:"stand",fan:"up"}, B1:{x:13,y:46,pose:"kneel",fan:"front"}, G9:{x:18,y:30,pose:"stand",fan:"up"}, G10:{x:22,y:30,pose:"stand",fan:"up"},
-        B2:{x:26,y:30,pose:"stand",fan:"up"}, B3:{x:30,y:46,pose:"kneel",fan:"front"}, G1:{x:33,y:30,pose:"stand",fan:"up"}, G2:{x:38,y:28,pose:"stand",fan:"up"},
-        G3:{x:43,y:28,pose:"stand",fan:"up"}, G4:{x:48,y:50,pose:"kneel",fan:"up"}, G5:{x:53,y:28,pose:"stand",fan:"up"}, B4:{x:48,y:30,pose:"stand",fan:"up"},
-        G6:{x:58,y:28,pose:"stand",fan:"up"}, G7:{x:63,y:30,pose:"stand",fan:"up"}, B6:{x:64,y:46,pose:"kneel",fan:"front"}, B5:{x:70,y:30,pose:"stand",fan:"up"},
-        G12:{x:76,y:30,pose:"stand",fan:"up"}, G13:{x:81,y:30,pose:"stand",fan:"up"}, B8:{x:86,y:46,pose:"kneel",fan:"front"}, B7:{x:90,y:30,pose:"stand",fan:"up"}, G11:{x:97,y:36,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 16, start: 185, end: 196, title: "여4 솔로 — 층층 부채 · 남1·남8 날개",
-      summary: "여4가 중앙에 무릎 앉아 두 부채를 세로로 겹쳐 얼굴 앞에 층층이 쌓아 올리는 솔로(3:07~3:13). 남1(왼쪽 앞)과 남8(오른쪽 앞)은 두 팔을 양옆으로 쭉 뻗어 부채를 날개처럼 편 채 정지, 그 뒤로 남자·여자들이 부채를 위로 든 채 층을 이뤄 큰 날개 모양을 만든다(왼쪽 무리: 남2·3, 여9·10·1·2 / 오른쪽 무리: 남6·7, 여12·13·7·11). 남4·남5는 중앙 좌우에서 부채를 아래로. 3:14 여4가 일어나며 풀린다.",
-      cues: ["3:07 층층 부채 시작", "3:10 좌우 날개 정지", "3:14 여4 일어남"],
-      confidence: "확실(무리 구성 추정)",
-      positions: {
-        B1:{x:13,y:40,pose:"stand",fan:"side"}, B8:{x:86,y:40,pose:"stand",fan:"side"},
-        G4:{x:49,y:50,pose:"kneel",fan:"stack"},
-        B4:{x:34,y:38,pose:"stand",fan:"down"}, B5:{x:64,y:38,pose:"stand",fan:"down"},
-        B2:{x:18,y:30,pose:"stand",fan:"up"}, B3:{x:23,y:28,pose:"stand",fan:"up"}, G9:{x:16,y:24,pose:"stand",fan:"up"}, G10:{x:21,y:22,pose:"stand",fan:"up"},
-        G1:{x:26,y:24,pose:"stand",fan:"up"}, G2:{x:29,y:30,pose:"stand",fan:"up"}, G8:{x:8,y:30,pose:"stand",fan:"up"}, G3:{x:40,y:28,pose:"stand",fan:"up"},
-        G5:{x:58,y:28,pose:"stand",fan:"up"}, G6:{x:70,y:30,pose:"stand",fan:"up"}, G7:{x:74,y:24,pose:"stand",fan:"up"}, B6:{x:78,y:28,pose:"stand",fan:"up"},
-        B7:{x:82,y:30,pose:"stand",fan:"up"}, G12:{x:79,y:22,pose:"stand",fan:"up"}, G13:{x:84,y:24,pose:"stand",fan:"up"}, G11:{x:92,y:30,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 17, start: 196, end: 211, title: "여4·여8 듀엣 · 좌우 앉아 꽃송이",
-      summary: "3:16 여4가 중앙에 서서 부채를 앞으로 낮게 흔들고, 여8이 왼쪽에서 걸어 나와 3:19 둘이 등을 맞대고 부채를 위로 든 채 회전. 3:22 둘이 함께 제자리 회전(치마 펴기) → 3:25 나란히 서서 부채를 앞에서 좌우로 큰 원 → 3:28 여7이 뒤에서 합류해 셋이 부채를 앞으로 모아 꽃을 만든다. 좌·우 그룹은 무릎 앉아 부채 원(얼굴 가리기)으로 배경을 만들고(왼쪽 4명, 오른쪽 5명), 나머지는 뒤에 서서 부채 위로.",
-      cues: ["3:16 여4 중앙", "3:19 여4·여8 등 맞대기", "3:25 부채 큰 원", "3:28 여7 합류, 셋이 꽃"],
-      confidence: "듀엣 상대(여8) 추정",
-      positions: {
-        G4:{x:50,y:40,pose:"spin",fan:"up"}, G8:{x:54,y:40,pose:"spin",fan:"up"}, G7:{x:52,y:28,pose:"stand",fan:"front"},
-        B1:{x:7,y:48,pose:"kneel",fan:"circle"}, B2:{x:12,y:46,pose:"kneel",fan:"circle"}, G9:{x:19,y:47,pose:"kneel",fan:"circle"}, B3:{x:23,y:49,pose:"kneel",fan:"circle"},
-        B4:{x:25,y:32,pose:"stand",fan:"up"}, G10:{x:14,y:32,pose:"stand",fan:"up"}, G1:{x:30,y:30,pose:"stand",fan:"up"}, G2:{x:36,y:28,pose:"stand",fan:"up"}, G3:{x:42,y:26,pose:"stand",fan:"up"},
-        G5:{x:60,y:26,pose:"stand",fan:"up"}, G6:{x:66,y:28,pose:"stand",fan:"up"}, B5:{x:75,y:32,pose:"stand",fan:"up"},
-        B6:{x:75,y:48,pose:"kneel",fan:"circle"}, G12:{x:80,y:46,pose:"kneel",fan:"circle"}, B7:{x:86,y:48,pose:"kneel",fan:"circle"}, G13:{x:89,y:44,pose:"kneel",fan:"circle"}, B8:{x:95,y:47,pose:"kneel",fan:"circle"},
-        G11:{x:92,y:32,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 18, start: 211, end: 217, title: "두 줄 정렬 — 앞줄 여자 앉기",
-      summary: "3:31 전원이 두 줄로 정렬. 뒷줄은 남자 8명과 여8·여7(중앙 뒤)이 서고, 앞줄은 여자 11명이 서서 부채를 수평으로 좌우 물결한 뒤 3:34 무릎 앉는다. 앞줄 간격을 일정하게(왼쪽 끝 여9 ~ 오른쪽 끝 여11) 맞추는 것이 포인트.",
-      cues: ["3:31 두 줄", "3:34 앞줄 앉기"],
-      confidence: "확실(뒷줄 여자 2명은 추정)",
-      positions: {
-        G9:{x:7,y:50,pose:"kneel",fan:"wave"}, G10:{x:17,y:50,pose:"kneel",fan:"wave"}, G1:{x:26,y:50,pose:"kneel",fan:"wave"}, G2:{x:33,y:50,pose:"kneel",fan:"wave"},
-        G3:{x:41,y:50,pose:"kneel",fan:"wave"}, G4:{x:51,y:50,pose:"kneel",fan:"wave"}, G5:{x:61,y:50,pose:"kneel",fan:"wave"}, G6:{x:71,y:50,pose:"kneel",fan:"wave"},
-        G12:{x:83,y:50,pose:"kneel",fan:"wave"}, G13:{x:92,y:50,pose:"kneel",fan:"wave"}, G11:{x:97,y:44,pose:"kneel",fan:"wave"},
-        B1:{x:9,y:30,pose:"stand",fan:"wave"}, B2:{x:16,y:28,pose:"stand",fan:"wave"}, B3:{x:23,y:28,pose:"stand",fan:"wave"}, B4:{x:29,y:28,pose:"stand",fan:"wave"},
-        G8:{x:38,y:28,pose:"stand",fan:"wave"}, G7:{x:46,y:28,pose:"stand",fan:"wave"},
-        B5:{x:60,y:28,pose:"stand",fan:"wave"}, B6:{x:69,y:28,pose:"stand",fan:"wave"}, B7:{x:76,y:28,pose:"stand",fan:"wave"}, B8:{x:87,y:28,pose:"stand",fan:"wave"}
-      }
-    },
-    {
-      id: 19, start: 217, end: 226, title: "앞줄 큰 꽃송이 열 개 · 뒷줄 부채 활짝",
-      summary: "앞줄에 앉은 여자들이 3:37 부채를 머리 위로 들어 올린 뒤 → 3:40 두 부채를 붙여 얼굴 앞에 큰 원(꽃송이)을 만들어 정지. 뒷줄 남자와 여8·여7은 부채를 머리 위로 활짝 펼쳐 정지(3:40~3:43). 3:43 앞줄이 부채를 앞으로 내렸다가 다시 원을 만들며 흔들고, 3:46 전원 일어난다.",
-      cues: ["3:37 앞줄 부채 위로", "3:40 꽃송이 정지", "3:43 내렸다 다시 원", "3:46 일어나기"],
-      confidence: "확실",
-      positions: {
-        G9:{x:7,y:50,pose:"kneel",fan:"circle"}, G10:{x:17,y:50,pose:"kneel",fan:"circle"}, G1:{x:26,y:50,pose:"kneel",fan:"circle"}, G2:{x:33,y:50,pose:"kneel",fan:"circle"},
-        G3:{x:41,y:50,pose:"kneel",fan:"circle"}, G4:{x:51,y:50,pose:"kneel",fan:"circle"}, G5:{x:61,y:50,pose:"kneel",fan:"circle"}, G6:{x:71,y:50,pose:"kneel",fan:"circle"},
-        G12:{x:83,y:50,pose:"kneel",fan:"circle"}, G13:{x:92,y:50,pose:"kneel",fan:"circle"}, G11:{x:97,y:44,pose:"kneel",fan:"circle"},
-        B1:{x:9,y:30,pose:"stand",fan:"up"}, B2:{x:16,y:28,pose:"stand",fan:"up"}, B3:{x:23,y:28,pose:"stand",fan:"up"}, B4:{x:29,y:28,pose:"stand",fan:"up"},
-        G8:{x:38,y:28,pose:"stand",fan:"up"}, G7:{x:46,y:28,pose:"stand",fan:"up"},
-        B5:{x:60,y:28,pose:"stand",fan:"up"}, B6:{x:69,y:28,pose:"stand",fan:"up"}, B7:{x:76,y:28,pose:"stand",fan:"up"}, B8:{x:87,y:28,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 20, start: 226, end: 247, title: "두 송이 큰 꽃 (좌·우 회전 꽃)",
-      summary: "여자 전원이 부채를 머리 위로 흔들며 3:46~3:50 좌·우 두 무리로 모인다. 각 무리는 가운데 3명이 서서 부채를 위로 모으고, 그 주위에 4명이 무릎 앉아 부채 원을 만들어 큰 꽃 두 송이가 된다(3:52). 3:55 서 있는 3명이 부채를 양옆으로 눕히고 무리 전체가 시계 방향으로 천천히 돈다. 4:01 무리 사이를 걸어 자리를 바꾸고 4:04 다시 꽃 모양. 남자는 좌우 끝과 중앙 뒤에서 부채 위로, 남1·2·7·8은 앉아 부채 원으로 꽃 바깥을 채운다.",
-      cues: ["3:50 두 무리 모임", "3:52 꽃 두 송이", "3:55 회전", "4:01 자리 바꾸기", "4:04 다시 꽃"],
-      confidence: "무리 구성 추정",
-      positions: {
-        G1:{x:26,y:32,pose:"stand",fan:"up"}, G2:{x:30,y:28,pose:"stand",fan:"up"}, G3:{x:34,y:32,pose:"stand",fan:"up"},
-        B1:{x:7,y:48,pose:"kneel",fan:"circle"}, B2:{x:15,y:46,pose:"kneel",fan:"circle"}, G9:{x:22,y:48,pose:"kneel",fan:"circle"}, G10:{x:37,y:48,pose:"kneel",fan:"circle"},
-        B3:{x:3,y:30,pose:"stand",fan:"up"}, B4:{x:9,y:28,pose:"stand",fan:"up"},
-        G4:{x:45,y:50,pose:"kneel",fan:"circle"}, G8:{x:53,y:50,pose:"kneel",fan:"circle"},
-        G5:{x:60,y:32,pose:"stand",fan:"up"}, G6:{x:64,y:28,pose:"stand",fan:"up"}, G7:{x:68,y:32,pose:"stand",fan:"up"},
-        G12:{x:74,y:48,pose:"kneel",fan:"circle"}, G11:{x:81,y:46,pose:"kneel",fan:"circle"}, B7:{x:86,y:48,pose:"kneel",fan:"circle"}, B8:{x:95,y:47,pose:"kneel",fan:"circle"},
-        G13:{x:58,y:48,pose:"kneel",fan:"circle"}, B5:{x:75,y:30,pose:"stand",fan:"up"}, B6:{x:86,y:30,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 21, start: 247, end: 260, title: "한 줄 물결 (여자 앞줄 · 남자 뒷줄)",
-      summary: "여자 13명이 무대 폭에 맞춰 가로 한 줄로 서고 남자는 그 뒤에 선다(4:07). 부채를 가슴 앞에서 수평으로 붙여 잡고 4:08~4:14 왼쪽에서 오른쪽으로 순서대로 몸을 기울이는 웨이브 2회. 4:17 전원이 상체를 앞으로 숙이며 부채를 무릎 높이까지 내린다(다음 동작 준비).",
-      cues: ["4:07 한 줄 정렬", "4:08 왼→오 웨이브", "4:17 앞으로 숙이며 부채 아래"],
-      confidence: "확실(순서 추정)",
-      positions: {
-        G9:{x:6,y:42,pose:"stand",fan:"wave"}, G10:{x:13,y:42,pose:"stand",fan:"wave"}, G1:{x:20,y:42,pose:"stand",fan:"wave"}, G2:{x:28,y:42,pose:"stand",fan:"wave"},
-        G3:{x:36,y:42,pose:"stand",fan:"wave"}, G4:{x:44,y:42,pose:"stand",fan:"wave"}, G8:{x:52,y:42,pose:"stand",fan:"wave"}, G5:{x:60,y:42,pose:"stand",fan:"wave"},
-        G6:{x:68,y:42,pose:"stand",fan:"wave"}, G7:{x:76,y:42,pose:"stand",fan:"wave"}, G12:{x:84,y:42,pose:"stand",fan:"wave"}, G13:{x:91,y:42,pose:"stand",fan:"wave"}, G11:{x:97,y:42,pose:"stand",fan:"wave"},
-        B1:{x:3,y:28,pose:"stand",fan:"wave"}, B2:{x:10,y:28,pose:"stand",fan:"wave"}, B3:{x:24,y:28,pose:"stand",fan:"wave"}, B4:{x:40,y:28,pose:"stand",fan:"wave"},
-        B5:{x:56,y:28,pose:"stand",fan:"wave"}, B6:{x:72,y:28,pose:"stand",fan:"wave"}, B7:{x:88,y:28,pose:"stand",fan:"wave"}, B8:{x:96,y:28,pose:"stand",fan:"wave"}
-      }
-    },
-    {
-      id: 22, start: 260, end: 281, title: "부채 활짝 파도 (올리기·내리기 웨이브)",
-      summary: "같은 한 줄에서 4:20 전원이 부채를 머리 위로 활짝 → 4:23 왼쪽부터 차례로 팔을 내렸다 올리는 파도(부채가 무대를 가로질러 출렁임) → 4:29 상체를 숙이며 부채를 아래에서 큰 원으로 돌리는 파도. 4:35~4:41 같은 파도를 반복하며 남자들이 뒤에서 함께 부채를 올린다. 웨이브는 항상 왼쪽(여9)에서 시작해 오른쪽(여11)에서 끝난다.",
-      cues: ["4:20 부채 활짝", "4:23 위 파도", "4:29 아래 파도", "4:35 반복"],
-      confidence: "확실",
-      positions: {
-        G9:{x:6,y:42,pose:"stand",fan:"up"}, G10:{x:13,y:42,pose:"stand",fan:"up"}, G1:{x:20,y:42,pose:"stand",fan:"up"}, G2:{x:28,y:42,pose:"stand",fan:"up"},
-        G3:{x:36,y:42,pose:"stand",fan:"up"}, G4:{x:44,y:42,pose:"stand",fan:"up"}, G8:{x:52,y:42,pose:"stand",fan:"up"}, G5:{x:60,y:42,pose:"stand",fan:"up"},
-        G6:{x:68,y:42,pose:"stand",fan:"up"}, G7:{x:76,y:42,pose:"stand",fan:"up"}, G12:{x:84,y:42,pose:"stand",fan:"up"}, G13:{x:91,y:42,pose:"stand",fan:"up"}, G11:{x:97,y:42,pose:"stand",fan:"up"},
-        B1:{x:3,y:28,pose:"stand",fan:"up"}, B2:{x:10,y:28,pose:"stand",fan:"up"}, B3:{x:24,y:28,pose:"stand",fan:"up"}, B4:{x:40,y:28,pose:"stand",fan:"up"},
-        B5:{x:56,y:28,pose:"stand",fan:"up"}, B6:{x:72,y:28,pose:"stand",fan:"up"}, B7:{x:88,y:28,pose:"stand",fan:"up"}, B8:{x:96,y:28,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 23, start: 281, end: 293, title: "걸으며 이동 · 중앙 모임 · 좌우 회전",
-      summary: "4:41 두 줄로 나뉘어 부채를 앞에 든 채 서로 엇갈려 걷는다(앞줄은 오른쪽으로, 뒷줄은 왼쪽으로). 4:47 여자 8명(여1·2·3·5·6·7·12·13)이 중앙에 모여 부채를 머리 위로 든 채 모으고, 여8은 왼쪽 끝, 여11은 오른쪽 끝에서 부채를 위로 든 채 큰 회전. 여9·10·4와 남자들은 중앙 무리 뒤에 선다.",
-      cues: ["4:41 엇갈려 걷기", "4:47 중앙 모임", "4:48 여8·여11 회전"],
-      confidence: "추정",
-      positions: {
-        G8:{x:10,y:44,pose:"spin",fan:"up"}, G11:{x:84,y:42,pose:"spin",fan:"up"},
-        G1:{x:26,y:36,pose:"stand",fan:"up"}, G2:{x:30,y:34,pose:"stand",fan:"up"}, G3:{x:36,y:36,pose:"stand",fan:"up"}, G5:{x:43,y:34,pose:"stand",fan:"up"},
-        G6:{x:49,y:36,pose:"stand",fan:"up"}, G7:{x:53,y:34,pose:"stand",fan:"up"}, G12:{x:60,y:36,pose:"stand",fan:"up"}, G13:{x:64,y:34,pose:"stand",fan:"up"},
-        G9:{x:32,y:24,pose:"stand",fan:"up"}, G10:{x:40,y:22,pose:"stand",fan:"up"}, G4:{x:48,y:24,pose:"stand",fan:"up"},
-        B1:{x:4,y:26,pose:"stand",fan:"up"}, B2:{x:10,y:24,pose:"stand",fan:"up"}, B3:{x:18,y:24,pose:"stand",fan:"up"}, B4:{x:56,y:22,pose:"stand",fan:"up"},
-        B5:{x:70,y:24,pose:"stand",fan:"up"}, B6:{x:78,y:24,pose:"stand",fan:"up"}, B7:{x:90,y:26,pose:"stand",fan:"up"}, B8:{x:96,y:30,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 24, start: 293, end: 305, title: "피날레 큰 꽃 (3층 꽃) · 마무리 포즈",
-      summary: "4:53 중앙에 3층 꽃을 만든다. 앞줄 3명(여2·여4·여6)이 무릎 앉아 부채를 앞에서 원으로, 중간 줄 6명(여1·3·5·7·12·13)이 서서 부채를 양옆으로 활짝, 뒷줄(여9·10, 남4·5)이 부채를 머리 위로. 여8(왼쪽 끝)과 여11(오른쪽 끝)은 회전을 마치고 무릎 앉아 부채 원으로 꽃의 양 끝을 장식(4:56~5:00). 나머지 남자는 뒤쪽 좌우에 서서 부채 위로. 5:02 음악이 잦아들면 전원 부채를 내리고 일어나 마무리.",
-      cues: ["4:53 3층 꽃 완성", "4:56 여8·여11 앉아 원", "5:00 정지", "5:02 부채 내리기"],
-      confidence: "층별 구성 추정",
-      positions: {
-        G2:{x:41,y:54,pose:"kneel",fan:"circle"}, G4:{x:48,y:55,pose:"kneel",fan:"circle"}, G6:{x:55,y:54,pose:"kneel",fan:"circle"},
-        G1:{x:27,y:40,pose:"stand",fan:"side"}, G3:{x:34,y:36,pose:"stand",fan:"side"}, G5:{x:41,y:33,pose:"stand",fan:"side"},
-        G7:{x:55,y:33,pose:"stand",fan:"side"}, G12:{x:62,y:36,pose:"stand",fan:"side"}, G13:{x:69,y:40,pose:"stand",fan:"side"},
-        G9:{x:40,y:24,pose:"stand",fan:"up"}, G10:{x:56,y:24,pose:"stand",fan:"up"}, B4:{x:46,y:20,pose:"stand",fan:"up"}, B5:{x:52,y:20,pose:"stand",fan:"up"},
-        G8:{x:10,y:48,pose:"kneel",fan:"circle"}, G11:{x:84,y:48,pose:"kneel",fan:"circle"},
-        B1:{x:4,y:28,pose:"stand",fan:"up"}, B2:{x:10,y:26,pose:"stand",fan:"up"}, B3:{x:16,y:28,pose:"stand",fan:"up"},
-        B6:{x:82,y:28,pose:"stand",fan:"up"}, B7:{x:88,y:26,pose:"stand",fan:"up"}, B8:{x:94,y:28,pose:"stand",fan:"up"}
-      }
-    },
-    {
-      id: 25, start: 305, end: 330, title: "인사 대형",
-      summary: "5:05 부채를 내려 한 손에 모아 잡고 여자 13명이 한 줄, 남1·남2는 왼쪽 끝, 나머지 남자는 뒷줄에 선다. 5:14 다 같이 고개 숙여 인사(부채는 앞에 늘어뜨림), 5:22 두 번째 인사 후 퇴장 준비.",
-      cues: ["5:05 정렬", "5:14 인사", "5:22 인사"],
-      confidence: "확실",
-      positions: {
-        B1:{x:3,y:40,pose:"stand",fan:"down"}, B2:{x:9,y:40,pose:"stand",fan:"down"},
-        G9:{x:15,y:41,pose:"stand",fan:"down"}, G10:{x:21,y:41,pose:"stand",fan:"down"}, G1:{x:27,y:41,pose:"stand",fan:"down"}, G2:{x:33,y:41,pose:"stand",fan:"down"},
-        G3:{x:39,y:41,pose:"stand",fan:"down"}, G4:{x:45,y:41,pose:"stand",fan:"down"}, G8:{x:51,y:41,pose:"stand",fan:"down"}, G5:{x:57,y:41,pose:"stand",fan:"down"},
-        G6:{x:64,y:41,pose:"stand",fan:"down"}, G7:{x:71,y:41,pose:"stand",fan:"down"}, G12:{x:78,y:41,pose:"stand",fan:"down"}, G13:{x:85,y:41,pose:"stand",fan:"down"}, G11:{x:92,y:41,pose:"stand",fan:"down"},
-        B3:{x:22,y:26,pose:"stand",fan:"down"}, B4:{x:35,y:26,pose:"stand",fan:"down"}, B5:{x:48,y:26,pose:"stand",fan:"down"}, B6:{x:62,y:26,pose:"stand",fan:"down"}, B7:{x:75,y:26,pose:"stand",fan:"down"}, B8:{x:88,y:26,pose:"stand",fan:"down"}
-      }
-    }
-  ]
-};
-</script>
-<script>// 무대 대형도 SVG 렌더러 (웹페이지·문서 공용)
-(function () {
-  const W = 1000, H = 620;
-  const PAD_L = 40, PAD_R = 40, PAD_T = 70, PAD_B = 60;
-  const SX = (W - PAD_L - PAD_R) / 100;
-  const SY = (H - PAD_T - PAD_B) / 60;
-  const px = (x) => PAD_L + x * SX;
-  const py = (y) => PAD_T + y * SY;
-
-  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
-
-  function fanGlyph(fan, cx, cy, r, color) {
-    // 부채 상태 표시
-    const f = `fill="${color}" stroke="none"`;
-    const arc = (x, y, rot, s) => `<path transform="translate(${x} ${y}) rotate(${rot}) scale(${s})" d="M-14 0 A14 14 0 0 1 14 0 L0 4 Z" ${f} opacity="0.95"/>`;
-    switch (fan) {
-      case "up": return arc(cx - r * 0.7, cy - r - 12, -20, 1) + arc(cx + r * 0.7, cy - r - 12, 20, 1);
-      case "front": return arc(cx - r * 0.6, cy + r + 8, 170, 0.9) + arc(cx + r * 0.6, cy + r + 8, 190, 0.9);
-      case "circle": return `<circle cx="${cx}" cy="${cy}" r="${r + 9}" fill="none" stroke="${color}" stroke-width="7" opacity="0.85"/>`;
-      case "side": return arc(cx - r - 14, cy, -90, 1) + arc(cx + r + 14, cy, 90, 1);
-      case "wave": return `<path d="M${cx - r - 16} ${cy + r + 12} q6 -8 12 0 t12 0 t12 0 t12 0 t12 0" fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round"/>`;
-      case "stack": return arc(cx, cy - r - 8, 0, 0.9) + arc(cx, cy - r - 22, 0, 0.9) + arc(cx, cy - r - 36, 0, 0.9);
-      case "down": return `<line x1="${cx - r * 0.5}" y1="${cy + r + 4}" x2="${cx - r * 0.5}" y2="${cy + r + 16}" stroke="${color}" stroke-width="3" stroke-linecap="round"/><line x1="${cx + r * 0.5}" y1="${cy + r + 4}" x2="${cx + r * 0.5}" y2="${cy + r + 16}" stroke="${color}" stroke-width="3" stroke-linecap="round"/>`;
-      default: return "";
-    }
-  }
-
-  function poseGlyph(pose, cx, cy, r, ink) {
-    switch (pose) {
-      case "spin": return `<path d="M${cx - r - 10} ${cy} a${r + 10} ${r + 10} 0 1 1 ${r + 10} ${r + 10}" fill="none" stroke="${ink}" stroke-width="2.5" stroke-dasharray="4 4"/><path d="M${cx + 4} ${cy + r + 14} l-6 -6 l8 -2 z" fill="${ink}"/>`;
-      case "walk": return `<path d="M${cx + r + 6} ${cy} l10 0 m-4 -4 l4 4 l-4 4" fill="none" stroke="${ink}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`;
-      default: return "";
-    }
-  }
-
-  function marker(st, p, theme, opts) {
-    const isBoy = st.id[0] === "B";
-    const off = p.fan === "off";
-    const cx = px(Math.max(-3, Math.min(103, p.x))), cy = py(p.y);
-    const r = p.pose === "kneel" ? 15 : p.pose === "low" ? 13 : 18;
-    const fill = isBoy ? theme.boy : theme.girl;
-    const dim = opts.highlight && opts.highlight !== st.id;
-    const g = [];
-    g.push(`<g class="mk" data-id="${st.id}" opacity="${off ? 0.35 : dim ? 0.22 : 1}">`);
-    if (opts.highlight === st.id) g.push(`<circle cx="${cx}" cy="${cy}" r="${r + 20}" fill="${theme.hi}" opacity="0.35"/>`);
-    if (!off) g.push(fanGlyph(p.fan, cx, cy, r, theme.fan));
-    if (p.pose === "kneel") g.push(`<circle cx="${cx}" cy="${cy}" r="${r + 4}" fill="none" stroke="${fill}" stroke-width="2" stroke-dasharray="3 3"/>`);
-    if (p.pose === "low") g.push(`<ellipse cx="${cx}" cy="${cy + 4}" rx="${r + 8}" ry="${r - 2}" fill="${fill}" opacity="0.35"/>`);
-    if (isBoy) g.push(`<rect x="${cx - r}" y="${cy - r}" width="${2 * r}" height="${2 * r}" rx="5" fill="${fill}" stroke="${theme.ink}" stroke-width="1.5"/>`);
-    else g.push(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" stroke="${theme.ink}" stroke-width="1.5"/>`);
-    g.push(poseGlyph(p.pose, cx, cy, r, theme.ink));
-    const num = st.label.replace(/^[여남]/, "");
-    g.push(`<text x="${cx}" y="${cy + 1}" text-anchor="middle" dominant-baseline="central" font-size="${r > 14 ? 17 : 14}" font-weight="700" fill="${theme.onMark}" font-family="'Noto Sans KR', system-ui, sans-serif">${esc(num)}</text>`);
-    if (off) g.push(`<text x="${cx}" y="${cy + r + 14}" text-anchor="middle" font-size="11" fill="${theme.muted}" font-family="'Noto Sans KR', system-ui, sans-serif">대기</text>`);
-    g.push(`</g>`);
-    return g.join("");
-  }
-
-  function renderStage(section, students, theme, opts) {
-    opts = opts || {};
-    const t = Object.assign({
-      bg: "#FBF9F4", floor: "#E9DFCB", floorLine: "#C9B893", ink: "#22303A", muted: "#7A8590",
-      girl: "#F06AA5", boy: "#3F8AD1", fan: "#E2467E", hi: "#F5C542", onMark: "#FFFFFF", back: "#D9E7F2"
-    }, theme || {});
-    const s = [];
-    s.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="대형도 ${esc(section.title)}" font-family="'Noto Sans KR', system-ui, sans-serif">`);
-    s.push(`<rect width="${W}" height="${H}" fill="${t.bg}"/>`);
-    // 배경막 (무대 뒤)
-    s.push(`<rect x="${PAD_L - 10}" y="${PAD_T - 34}" width="${W - PAD_L - PAD_R + 20}" height="26" rx="4" fill="${t.back}"/>`);
-    s.push(`<text x="${W / 2}" y="${PAD_T - 16}" text-anchor="middle" font-size="13" fill="${t.muted}" letter-spacing="2">무대 뒤 (배경막)</text>`);
-    // 바닥
-    s.push(`<rect x="${PAD_L - 10}" y="${PAD_T - 4}" width="${W - PAD_L - PAD_R + 20}" height="${H - PAD_T - PAD_B + 8}" rx="6" fill="${t.floor}" stroke="${t.floorLine}"/>`);
-    for (let i = 1; i < 4; i++) {
-      const x = px(i * 25);
-      s.push(`<line x1="${x}" y1="${PAD_T}" x2="${x}" y2="${H - PAD_B}" stroke="${t.floorLine}" stroke-dasharray="6 8" opacity="0.7"/>`);
-    }
-    for (let j = 1; j < 3; j++) {
-      const y = py(j * 20);
-      s.push(`<line x1="${PAD_L}" y1="${y}" x2="${W - PAD_R}" y2="${y}" stroke="${t.floorLine}" stroke-dasharray="6 8" opacity="0.7"/>`);
-    }
-    s.push(`<line x1="${px(50)}" y1="${PAD_T}" x2="${px(50)}" y2="${H - PAD_B}" stroke="${t.floorLine}" stroke-width="2" opacity="0.9"/>`);
-    s.push(`<text x="${PAD_L}" y="${H - 22}" font-size="13" fill="${t.muted}">◀ 객석에서 볼 때 왼쪽</text>`);
-    s.push(`<text x="${W - PAD_R}" y="${H - 22}" text-anchor="end" font-size="13" fill="${t.muted}">객석에서 볼 때 오른쪽 ▶</text>`);
-    s.push(`<text x="${W / 2}" y="${H - 22}" text-anchor="middle" font-size="13" fill="${t.muted}" letter-spacing="2">객 석</text>`);
-    // 마커: 뒤(y 작은)부터 그려 앞이 위에 오도록
-    const order = students.filter(st => section.positions[st.id]).sort((a, b) => section.positions[a.id].y - section.positions[b.id].y);
-    for (const st of order) s.push(marker(st, section.positions[st.id], t, opts));
-    s.push(`</svg>`);
-    return s.join("");
-  }
-
-  window.renderStage = renderStage;
-})();
-</script>
-<script>
-(function(){
-  const D = window.DANCE_DATA, S = D.sections, ST = D.students;
-  const byId = Object.fromEntries(ST.map(s=>[s.id,s]));
-  const POSE = {stand:"서기",kneel:"무릎/앉기",low:"엎드리기",spin:"회전",walk:"이동 중"};
-  const FAN = {down:"내림",front:"앞으로",up:"머리 위",circle:"부채 원",side:"옆으로",wave:"수평 물결",stack:"층층",off:"무대 밖 대기"};
-  const fmt = s => `${Math.floor(s/60)}:${String(s%60).padStart(2,"0")}`;
-  let cur = 0, hl = "";
-  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  const theme = () => ({bg:css("--stage-bg"),floor:css("--floor"),floorLine:css("--floor-line"),ink:css("--ink"),muted:css("--muted"),girl:css("--girl"),boy:css("--boy"),fan:css("--fan"),hi:css("--hi"),onMark:css("--onmark"),back:css("--back")});
-  const zone = p => {
-    const lr = p.x < 0 || p.x > 100 ? (p.x < 0 ? "왼쪽 밖" : "오른쪽 밖") : p.x < 22 ? "왼쪽 끝" : p.x < 40 ? "왼쪽" : p.x <= 60 ? "중앙" : p.x <= 78 ? "오른쪽" : "오른쪽 끝";
-    const fb = p.y < 26 ? "뒤" : p.y < 44 ? "가운데" : "앞";
-    return (p.x < 0 || p.x > 100) ? lr : `${lr} ${fb}`;
-  };
-
-  // 목록
-  const list = document.getElementById("seclist");
-  S.forEach((s,i)=>{ const b=document.createElement("button"); b.innerHTML=`<span class="t">${fmt(s.start)}</span><span>${s.id}. ${s.title}</span>`; b.onclick=()=>go(i); list.appendChild(b); });
-  const tl = document.getElementById("timeline");
-  S.forEach((s,i)=>{ const sp=document.createElement("span"); sp.style.flex=String(s.end-s.start); sp.title=`${s.id}. ${s.title}`; sp.onclick=()=>go(i); tl.appendChild(sp); });
-  const sel = document.getElementById("hl");
-  ST.forEach(s=>{ const o=document.createElement("option"); o.value=s.id; o.textContent=s.label; sel.appendChild(o); });
-  sel.onchange = ()=>{ hl=sel.value; render(); renderTrace(); };
-  document.getElementById("prev").onclick=()=>go(cur-1);
-  document.getElementById("next").onclick=()=>go(cur+1);
-  document.addEventListener("keydown",e=>{ if(e.target.tagName==="SELECT")return; if(e.key==="ArrowRight")go(cur+1); if(e.key==="ArrowLeft")go(cur-1); });
-
-  function go(i){ if(i<0||i>=S.length)return; cur=i; render(); try{localStorage.setItem("buchae-sec",String(i));}catch(e){} }
-  function render(){
-    const s=S[cur];
-    document.getElementById("sectitle").textContent=`${s.id}. ${s.title}`;
-    document.getElementById("sectime").textContent=`${fmt(s.start)} – ${fmt(s.end)}`;
-    document.getElementById("ytlink").href=`https://www.youtube.com/watch?v=${D.video.id}&t=${s.start}s`;
-    document.getElementById("stage").innerHTML=window.renderStage(s,ST,theme(),{highlight:hl});
-    document.getElementById("summary").textContent=s.summary;
-    document.getElementById("cues").innerHTML=s.cues.map(c=>`<span class="cue">${c}</span>`).join("");
-    document.getElementById("conf").innerHTML=`<b>번호 배정 신뢰도</b> · ${s.confidence}`;
-    document.getElementById("prev").disabled=cur===0; document.getElementById("next").disabled=cur===S.length-1;
-    [...list.children].forEach((b,i)=>b.setAttribute("aria-current",i===cur?"true":"false"));
-    [...tl.children].forEach((sp,i)=>sp.classList.toggle("on",i===cur));
-    if(list.children[cur]) list.children[cur].scrollIntoView({block:"nearest"});
-    const rows=ST.filter(st=>s.positions[st.id]).map(st=>{const p=s.positions[st.id];return `<td class="n"><span class="dot ${st.id[0]==="B"?"b":""}"></span>${st.label}</td><td>${zone(p)}</td><td>${POSE[p.pose]}</td><td>${FAN[p.fan]}</td>`;});
-    const half=Math.ceil(rows.length/2); let html="";
-    for(let i=0;i<half;i++) html+=`<tr>${rows[i]}${rows[i+half]||"<td></td><td></td><td></td><td></td>"}</tr>`;
-    document.querySelector("#postable tbody").innerHTML=html;
-  }
-  function renderTrace(){
-    const card=document.getElementById("tracecard");
-    if(!hl){card.hidden=true;return;}
-    card.hidden=false; const st=byId[hl];
-    document.getElementById("tracetitle").textContent=`${st.label} 동선 — ${st.role}`;
-    document.getElementById("tracelist").innerHTML=S.map((s,i)=>{const p=s.positions[hl]; if(!p)return ""; return `<li data-i="${i}"><span class="t">${fmt(s.start)}</span>${zone(p)} <span class="p">· ${POSE[p.pose]} · ${FAN[p.fan]}</span></li>`;}).join("");
-    [...document.getElementById("tracelist").children].forEach(li=>li.onclick=()=>go(+li.dataset.i));
-  }
-  // 번호표
-  const rG=document.querySelector("#rosterG tbody"), rB=document.querySelector("#rosterB tbody");
-  ST.forEach(st=>{const tr=document.createElement("tr"); tr.innerHTML=`<td class="n"><span class="dot ${st.id[0]==="B"?"b":""}"></span>${st.label}</td><td>${st.role}</td>`; (st.id[0]==="B"?rB:rG).appendChild(tr);});
-  // 탭
-  document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
-    document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-selected",x===b?"true":"false"));
-    ["sections","roster","guide"].forEach(t=>document.getElementById("tab-"+t).hidden=(t!==b.dataset.tab));
-  });
-  const mq=window.matchMedia("(prefers-color-scheme: dark)"); mq.addEventListener && mq.addEventListener("change",render);
-  new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
-  try{const v=localStorage.getItem("buchae-sec"); if(v!==null&&S[+v]) cur=+v;}catch(e){}
-  render();
-})();
-</script>
-
-</body></html>
+<script src="js/choreo.js"></script>
+<script src="js/plan.js"></script>
+<script src="js/plan-data.js"></script>
+<script src="js/figures.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
