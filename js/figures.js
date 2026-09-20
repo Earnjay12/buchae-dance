@@ -116,8 +116,9 @@
 
   // 객석에서 본 그림
   function front(plan, t, opts = {}) {
+    const ST = plan.stage || { W: 10, D: 6 }, SW = ST.W, SD = ST.D, sizeK = Math.min(1, 11 / SW);
     const W = 1000, H = 560, backY = 170, frontY = 520;
-    const map = (x, y) => { const d = Math.max(0, Math.min(1, y / 6)); const half = 360 + d * 140; return [500 + (x - 5) / 5 * half, backY + d * (frontY - backY), 0.62 + 0.5 * d]; };
+    const map = (x, y) => { const d = Math.max(0, Math.min(1, y / SD)); const half = 360 + d * 140; return [500 + (x - SW / 2) / (SW / 2) * half, backY + d * (frontY - backY), (0.62 + 0.5 * d) * sizeK]; };
     const beat = plan.beatAt(t);
     const people = plan.ids.map(id => { const p = plan.posAt(id, t); const pr = plan.presetFor(id, beat) || {}; const mv = plan.moveDuring(id, beat); return { id, p, pr, moving: mv && t >= mv.tr.t0 + mv.m.delay && t <= mv.tr.t1 }; })
       .sort((a, b) => a.p[1] - b.p[1]);
@@ -125,16 +126,16 @@
     s.push(`<rect width="${W}" height="${H}" fill="var(--stage-bg)"/>`);
     s.push(`<rect x="60" y="20" width="880" height="${backY - 14}" rx="8" fill="var(--back)"/>`);
     s.push(`<text x="500" y="46" text-anchor="middle" font-size="15" fill="var(--muted)" letter-spacing="3">무대 뒤 (배경막)</text>`);
-    const [bl] = map(0, 0), [br] = map(10, 0), [fl] = map(0, 6), [frr] = map(10, 6);
+    const [bl] = map(0, 0), [br] = map(SW, 0), [fl] = map(0, SD), [frr] = map(SW, SD);
     s.push(`<path d="M${bl} ${backY} L${br} ${backY} L${frr} ${frontY} L${fl} ${frontY} Z" fill="var(--floor)" stroke="var(--floor-line)"/>`);
-    for (let x = 1; x < 10; x++) { const a = map(x, 0), b = map(x, 6); s.push(`<line x1="${r1(a[0])}" y1="${backY}" x2="${r1(b[0])}" y2="${frontY}" stroke="var(--floor-line)" stroke-dasharray="4 7" opacity="${x === 5 ? 0.9 : 0.45}"/>`); }
-    for (let y = 1; y < 6; y++) { const a = map(0, y), b = map(10, y); s.push(`<line x1="${r1(a[0])}" y1="${r1(a[1])}" x2="${r1(b[0])}" y2="${r1(b[1])}" stroke="var(--floor-line)" stroke-dasharray="4 7" opacity="0.45"/>`); }
+    for (let x = 1; x < SW; x++) { const a = map(x, 0), b = map(x, SD); s.push(`<line x1="${r1(a[0])}" y1="${backY}" x2="${r1(b[0])}" y2="${frontY}" stroke="var(--floor-line)" stroke-dasharray="4 7" opacity="${Math.abs(x - SW / 2) < 0.01 ? 0.9 : 0.45}"/>`); }
+    for (let y = 1; y < SD; y++) { const a = map(0, y), b = map(SW, y); s.push(`<line x1="${r1(a[0])}" y1="${r1(a[1])}" x2="${r1(b[0])}" y2="${r1(b[1])}" stroke="var(--floor-line)" stroke-dasharray="4 7" opacity="0.45"/>`); }
     s.push(`<text x="500" y="${H - 14}" text-anchor="middle" font-size="15" fill="var(--muted)" letter-spacing="3">객 석 (보는 사람)</text>`);
     for (const q of people) {
-      const [fx, fy, k] = map(Math.max(-0.6, Math.min(10.6, q.p[0])), q.p[1]);
+      const [fx, fy, k] = map(Math.max(-0.6, Math.min(SW + 0.6, q.p[0])), q.p[1]);
       const pose = q.moving && q.pr.pose !== "walk" ? "walk" : q.pr.pose || "stand";
       const fsv = q.moving && q.pr.pose !== "walk" ? "hold" : q.pr.fs || "closed";
-      const off = q.p[0] < -0.2 || q.p[0] > 10.2;
+      const off = q.p[0] < -0.2 || q.p[0] > SW + 0.2;
       s.push(off ? `<g opacity="0.35">${person(fx, fy, k * 0.9, q.id <= 10, "stand", "closed", q.id)}</g>` : person(fx, fy, k, q.id <= 10, pose, fsv, q.id, { hi: opts.hi === q.id, dim: opts.hi && opts.hi !== q.id }));
     }
     s.push(`</svg>`);
@@ -143,34 +144,36 @@
 
   // 위에서 본 대형도 (flip = 학생 기준: 객석이 위쪽)
   function top(plan, t, opts = {}) {
-    const W = 1000, H = 660, PL = 50, PT = 60, SC = 90; // 1m = 90px
+    const ST = plan.stage || { W: 10, D: 6 }, SW = ST.W, SD = ST.D;
+    const W = 1000, H = 660, SC = Math.min(900 / SW, 540 / SD);
+    const PL = (W - SW * SC) / 2, PT = (H - SD * SC) / 2 + 10;
     const flip = !!opts.flip;
     // 객석 기준: 객석이 아래(앞 = 아래) · 학생 기준: 객석이 위, 좌우도 뒤집힘
-    const Q = (x, y) => flip ? [PL + (10 - x) * SC, PT + (6 - y) * SC] : [PL + x * SC, PT + y * SC];
+    const Q = (x, y) => flip ? [PL + (SW - x) * SC, PT + (SD - y) * SC] : [PL + x * SC, PT + y * SC];
     const s = [`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="위에서 본 대형도" font-family="inherit">`];
     s.push(`<rect width="${W}" height="${H}" fill="var(--stage-bg)"/>`);
-    const [x0, y0] = Q(0, 0), [x1, y1] = Q(10, 6);
+    const [x0, y0] = Q(0, 0), [x1, y1] = Q(SW, SD);
     const rx = Math.min(x0, x1), ry = Math.min(y0, y1);
-    s.push(`<rect x="${rx}" y="${ry}" width="${10 * SC}" height="${6 * SC}" rx="6" fill="var(--floor)" stroke="var(--floor-line)"/>`);
-    for (let x = 1; x < 10; x++) { const a = Q(x, 0), b = Q(x, 6); s.push(`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--floor-line)" stroke-dasharray="5 7" opacity="${x === 5 ? 1 : 0.55}" stroke-width="${x === 5 ? 2 : 1}"/>`); }
-    for (let y = 1; y < 6; y++) { const a = Q(0, y), b = Q(10, y); s.push(`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="var(--floor-line)" stroke-dasharray="5 7" opacity="0.55"/>`); }
+    s.push(`<rect x="${r1(rx)}" y="${r1(ry)}" width="${r1(SW * SC)}" height="${r1(SD * SC)}" rx="6" fill="var(--floor)" stroke="var(--floor-line)"/>`);
+    for (let x = 1; x < SW; x++) { const a = Q(x, 0), b = Q(x, SD); const mid = Math.abs(x - SW / 2) < 0.01; s.push(`<line x1="${r1(a[0])}" y1="${r1(a[1])}" x2="${r1(b[0])}" y2="${r1(b[1])}" stroke="var(--floor-line)" stroke-dasharray="5 7" opacity="${mid ? 1 : 0.55}" stroke-width="${mid ? 2 : 1}"/>`); }
+    for (let y = 1; y < SD; y++) { const a = Q(0, y), b = Q(SW, y); s.push(`<line x1="${r1(a[0])}" y1="${r1(a[1])}" x2="${r1(b[0])}" y2="${r1(b[1])}" stroke="var(--floor-line)" stroke-dasharray="5 7" opacity="0.55"/>`); }
     // 눈금: 가로(객석 기준 왼쪽 끝 0m) · 앞에서 거리
-    const frontEdge = Q(0, 6)[1], backEdge = Q(0, 0)[1];
+    const frontEdge = Q(0, SD)[1], backEdge = Q(0, 0)[1];
     const labY = frontEdge + (flip ? -12 : 18);
-    for (let x = 0; x <= 10; x++) { const a = Q(x, 6); s.push(`<text x="${a[0]}" y="${labY}" text-anchor="middle" font-size="12" fill="var(--muted)">${x}</text>`); }
-    for (let y = 0; y <= 6; y++) { const a = Q(0, y), b = Q(10, y); const lx = flip ? b[0] - 8 : a[0] - 8; s.push(`<text x="${lx}" y="${a[1] + 4}" text-anchor="end" font-size="12" fill="var(--muted)">${6 - y}</text>`); }
+    for (let x = 0; x <= SW; x++) { const a = Q(x, SD); s.push(`<text x="${r1(a[0])}" y="${r1(labY)}" text-anchor="middle" font-size="12" fill="var(--muted)">${x}</text>`); }
+    for (let y = 0; y <= SD; y++) { const a = Q(0, y), b = Q(SW, y); const lx = flip ? b[0] - 8 : a[0] - 8; s.push(`<text x="${r1(lx)}" y="${r1(a[1] + 4)}" text-anchor="end" font-size="12" fill="var(--muted)">${SD - y}</text>`); }
     const audY = flip ? frontEdge - 30 : frontEdge + 42, backLabY = flip ? backEdge + 38 : backEdge - 26;
     s.push(`<text x="${W / 2}" y="${audY}" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)" letter-spacing="4">객 석 (앞)</text>`);
     s.push(`<text x="${W / 2}" y="${backLabY}" text-anchor="middle" font-size="14" fill="var(--muted)" letter-spacing="3">무대 뒤 (배경막)</text>`);
     s.push(`<text x="${PL}" y="${audY}" font-size="12" fill="var(--muted)">${flip ? "◀ 학생의 왼쪽" : "◀ 객석에서 볼 때 왼쪽"}</text>`);
-    s.push(`<text x="${PL + 10 * SC}" y="${audY}" text-anchor="end" font-size="12" fill="var(--muted)">${flip ? "학생의 오른쪽 ▶" : "객석에서 볼 때 오른쪽 ▶"}</text>`);
+    s.push(`<text x="${r1(PL + SW * SC)}" y="${audY}" text-anchor="end" font-size="12" fill="var(--muted)">${flip ? "학생의 오른쪽 ▶" : "객석에서 볼 때 오른쪽 ▶"}</text>`);
     // 이동 경로(지금 또는 곧 시작하는 이동)
     const tr = plan.transAt(t) || plan.trans.find(x => x.t0 > t && x.t0 - t < (opts.lookahead ?? 3));
     if (tr && opts.paths !== false) {
       for (const id of plan.ids) {
         const m = tr.movers[id]; if (!m.moving) continue;
         const dim = opts.hi && opts.hi !== id;
-        const pts = m.pts.map(p => Q(Math.max(-0.5, Math.min(10.5, p[0])), p[1]));
+        const pts = m.pts.map(p => Q(Math.max(-0.5, Math.min(SW + 0.5, p[0])), p[1]));
         const d = "M" + pts.map(p => `${r1(p[0])} ${r1(p[1])}`).join(" L");
         const col = id <= 10 ? "var(--girl)" : "var(--boy)";
         s.push(`<path d="${d}" fill="none" stroke="${col}" stroke-width="${opts.hi === id ? 4 : 2}" stroke-dasharray="${m.delay > 0 ? "2 6" : "7 6"}" opacity="${dim ? 0.15 : 0.8}" marker-end="url(#ah${id <= 10 ? "g" : "b"})"/>`);
@@ -181,17 +184,17 @@
     const beat = plan.beatAt(t);
     const order = plan.ids.slice().sort((a, b) => plan.posAt(a, t)[1] - plan.posAt(b, t)[1]);
     for (const id of order) {
-      const p = plan.posAt(id, t), [cx, cy] = Q(Math.max(-0.45, Math.min(10.45, p[0])), p[1]);
-      const pr = plan.presetFor(id, beat) || {}, off = p[0] < -0.2 || p[0] > 10.2;
+      const p = plan.posAt(id, t), [cx, cy] = Q(Math.max(-0.45, Math.min(SW + 0.45, p[0])), p[1]);
+      const pr = plan.presetFor(id, beat) || {}, off = p[0] < -0.2 || p[0] > SW + 0.2;
       const dim = off || (opts.hi && opts.hi !== id);
-      const r = 17, girl = id <= 10, col = girl ? "var(--girl)" : "var(--boy)";
+      const r = Math.max(9, Math.min(17, SC * 0.19)), girl = id <= 10, col = girl ? "var(--girl)" : "var(--boy)";
       const g = [`<g opacity="${off ? 0.4 : dim ? 0.25 : 1}" data-id="${id}" style="cursor:pointer">`];
       if (opts.hi === id) g.push(`<circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r + 14}" fill="var(--hi)" opacity="0.45"/>`);
       if (pr.pose === "kneel" || pr.pose === "bow" || pr.pose === "crouch") g.push(`<circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r + 6}" fill="none" stroke="${col}" stroke-width="2" stroke-dasharray="3 3"/>`);
       if (pr.pose === "spin") g.push(`<path d="M${r1(cx - r - 9)} ${r1(cy)} a${r + 9} ${r + 9} 0 1 1 ${r + 9} ${r + 9}" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 4"/>`);
       g.push(girl ? `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="${r}" fill="${col}" stroke="var(--ink)" stroke-width="1.5"/>`
         : `<rect x="${r1(cx - r)}" y="${r1(cy - r)}" width="${2 * r}" height="${2 * r}" rx="5" fill="${col}" stroke="var(--ink)" stroke-width="1.5"/>`);
-      g.push(`<text x="${r1(cx)}" y="${r1(cy + 6)}" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">${id}</text>`);
+      g.push(`<text x="${r1(cx)}" y="${r1(cy + r * 0.36)}" text-anchor="middle" font-size="${r1(r * 0.95)}" font-weight="700" fill="#fff">${id}</text>`);
       if (off) g.push(`<text x="${r1(cx)}" y="${r1(cy + r + 14)}" text-anchor="middle" font-size="11" fill="var(--muted)">대기</text>`);
       g.push(`</g>`);
       s.push(g.join(""));

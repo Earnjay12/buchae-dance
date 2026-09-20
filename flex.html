@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>부채춤 대형 만들기 — 인원 맞춤</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>부채춤 대형 만들기 · 인원 맞춤</h1>
+      <p class="sub" id="cntInfo">인원수를 정하면 대형과 동선을 새로 계산합니다</p>
+      <p class="roles" id="roleInfo"></p>
+    </div>
+    <details class="settings" id="settings" open>
+      <summary>👥 인원수 · 무대 설정</summary>
+      <div class="set-body">
+        <div class="cnt">
+          <label>여학생 <input type="number" id="nG" min="0" max="30" step="1"> 명</label>
+          <label>남학생 <input type="number" id="nB" min="0" max="30" step="1"> 명</label>
+        </div>
+        <div class="cnt">
+          <label>무대 가로 <input type="number" id="stW" min="6" max="20" step="0.5"> m</label>
+          <label>무대 세로 <input type="number" id="stD" min="4" max="12" step="0.5"> m</label>
+          <button class="btn" id="autoStage" type="button">인원에 맞게 추천</button>
+        </div>
+        <button class="btn primary" id="makeBtn" type="button">이 인원으로 대형 만들기</button>
+        <label>보폭(한 걸음) <input type="number" id="stStep" min="0.3" max="0.8" step="0.05"> m</label>
+        <fieldset><legend>왼쪽·오른쪽 기준</legend>
+          <label><input type="radio" name="view" value="student"> 학생 기준 (무대에서 객석을 볼 때)</label>
+          <label><input type="radio" name="view" value="audience"> 객석 기준 (보는 사람 쪽에서)</label>
+        </fieldset>
+        <p class="note">모두 4~40명까지 만들 수 있어요. 번호는 여학생 1번부터, 이어서 남학생이에요. 앞·뒤는 늘 무대 기준(앞 = 객석 쪽)이에요.</p>
+      </div>
+    </details>
+  </header>
+
+  <section class="player">
+    <div class="vidcol">
+      <div class="vidbox" id="vidBox">
+        <video id="video" playsinline preload="auto"></video>
+        <div class="ytbox" id="ytBox" hidden><div id="ytPlayer"></div></div>
+        <div class="vidmsg" id="vidMsg">
+          <p><b>원본 영상을 옆에 놓고 볼 수 있어요.</b></p>
+          <label class="btn primary">영상 파일 열기 (mp4)<input type="file" id="vidPick" accept="video/*" hidden></label>
+          <button class="btn" id="ytBtn" type="button">유튜브로 보기</button>
+          <p class="note">파일은 이 컴퓨터에서만 열리고 어디에도 올라가지 않아요. 한 프레임씩 넘기기는 파일로 열 때 가장 정확해요.</p>
+        </div>
+      </div>
+      <div class="count"><span class="clabel">박 세기</span><span id="countBig">–</span><span class="csub" id="countSub">음악 전</span></div>
+    </div>
+    <div class="diagcol">
+      <div class="dtabs" role="tablist">
+        <button role="tab" data-mode="top" aria-selected="true">위에서 본 대형</button>
+        <button role="tab" data-mode="front" aria-selected="false">객석에서 본 그림</button>
+      </div>
+      <div class="diag" id="diag"></div>
+      <p class="legend">원 = 여 · 네모 = 남 · 점선 테두리 = 앉기 · 점선 호 = 회전 · 점선 화살표 = 이동 경로(촘촘한 점 = 기다렸다 출발) · 번호를 누르면 그 학생만 따라가요</p>
+    </div>
+  </section>
+
+  <section class="transport card">
+    <div class="scrub" id="scrub" role="slider" aria-label="시간" tabindex="0">
+      <div class="bands" id="bands"></div>
+      <div class="keys" id="keys"></div>
+      <div class="thumb" id="thumb"></div>
+    </div>
+    <div class="zoom" id="zoom" title="좌우로 끌면 한 프레임씩 세밀하게 움직여요"></div>
+    <div class="ctrls">
+      <button class="btn" id="bPrevBeat" title="이전 박 구간 ([)">⏮ 이전</button>
+      <button class="btn" id="bBack1" title="1초 뒤로 (Shift+←)">−1초</button>
+      <button class="btn" id="bBackF" title="1프레임 뒤로 (←)">◀ 1프레임</button>
+      <button class="btn primary" id="bPlay" title="재생/멈춤 (스페이스)">▶ 재생</button>
+      <button class="btn" id="bFwdF" title="1프레임 앞으로 (→)">1프레임 ▶</button>
+      <button class="btn" id="bFwd1" title="1초 앞으로 (Shift+→)">+1초</button>
+      <button class="btn" id="bNextBeat" title="다음 박 구간 (])">다음 ⏭</button>
+      <label class="inl">속도 <select id="speed"><option value="0.25">0.25배</option><option value="0.5">0.5배</option><option value="0.75">0.75배</option><option value="1" selected>1배</option></select></label>
+      <label class="inl"><input type="checkbox" id="loop"> 이 구간 반복</label>
+      <span class="time" id="timeLbl">0:00.00</span>
+    </div>
+  </section>
+
+  <section class="card beat">
+    <div class="beathead">
+      <div>
+        <p class="kicker" id="secKick"></p>
+        <h2 id="secTitle"></h2>
+        <p class="easy" id="secEasy"></p>
+      </div>
+      <div class="beatmeta">
+        <span class="bt" id="beatTime"></span>
+        <span class="cue" id="beatCue"></span>
+      </div>
+    </div>
+    <label class="memo">🎵 소리·가사 신호 메모 (선생님이 적어 두면 이 구간마다 보여요)
+      <input type="text" id="memo" placeholder="예: 북소리 두 번 / 후렴 시작">
+    </label>
+    <div class="filters">
+      <span>보기:</span>
+      <button class="chip" data-f="all" aria-pressed="true">전체</button>
+      <button class="chip" data-f="G" aria-pressed="false">여</button>
+      <button class="chip" data-f="B" aria-pressed="false">남</button>
+      <label class="inl">학생 따라가기 <select id="who"><option value="">선택 안 함</option></select></label>
+    </div>
+    <div class="tablewrap">
+      <table class="moves">
+        <thead><tr><th>번호</th><th>자리</th><th>발</th><th>팔</th><th>부채 (방향·높이)</th><th>시선</th><th>이동 · 동선</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="sections" aria-selected="true">구간 목록</button>
+    <button role="tab" data-tab="key" aria-selected="false">핵심 대형 그림</button>
+    <button role="tab" data-tab="student" aria-selected="false">학생별 동선표</button>
+    <button role="tab" data-tab="dict" aria-selected="false">부채 동작 사전</button>
+    <button role="tab" data-tab="safety" aria-selected="false">안전 동선 점검</button>
+    <button role="tab" data-tab="practice" aria-selected="false">연습 순서</button>
+  </nav>
+  <section class="panel" id="p-sections"></section>
+  <section class="panel" id="p-key" hidden></section>
+  <section class="panel" id="p-student" hidden>
+    <div class="stuhead">
+      <label>학생 <select id="stuSel"></select></label>
+      <label>이름 <input type="text" id="stuName" placeholder="(선택) 이름을 적으면 인쇄에 나와요"></label>
+      <button class="btn" id="stuPrint">🖨 이 학생 동선표 인쇄</button>
+    </div>
+    <div id="stuBody"></div>
+  </section>
+  <section class="panel" id="p-dict" hidden></section>
+  <section class="panel" id="p-safety" hidden></section>
+  <section class="panel" id="p-practice" hidden></section>
+
+  <footer class="foot">
+    <p>같은 안무를 인원수에 맞춰 다시 계산한 페이지예요. 대형은 줄·부채꼴·모둠 규칙으로 만들고, 이동할 때는 서로 피하면서 걷도록 계산합니다. <a href="index.html">19명 고정 버전(영상 분석 그대로) 보기</a> · <a href="old/analysis-21.html">처음 만든 원본 분석(21명)</a></p>
+  </footer>
+</div>
+<script src="js/choreo.js"></script>
+<script src="js/choreo-flex.js"></script>
+<script src="js/plan.js"></script>
+<script src="js/figures.js"></script>
+<script src="js/app-flex.js"></script>
+</body>
+</html>

@@ -157,3 +157,10 @@ tr.moving td:nth-child(7) { font-weight: 500; }
   .stuhead label, .stuhead button { display: none; }
   th { position: static; }
 }
+
+/* 인원 맞춤 페이지 */
+.roles { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.rolechip { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 2px 10px 2px 4px; font-size: 13px; }
+.cnt { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.settings .set-body { max-width: 460px; }
+.settings .btn { min-height: 36px; }
